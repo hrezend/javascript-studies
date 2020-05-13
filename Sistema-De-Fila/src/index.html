@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+  <html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="author" content=" Hérson Rezende">
+        <link rel="stylesheet" type="text/css" media="screen and (min-width: 1100px)"href="../css/large.css">
+	<link rel="shortcut icon" href="../assets/Logo.svg" type="image/x-icon">
+	<script type="text/javascript" src="../js/Fila.js"></script>
+	<title>La Padarie</title> 
+    </head>
+
+    <body>     
+         
+	<div class="page-container">
+		<div class="page-nav"></div>
+		<div class="page-content">
+			<div class="page-logo-container">
+				<img src="../assets/Logo.svg"/>
+            			<h1 class="titulo">Quem quer pão?</h1>			
+			</div>
+			<div class="page-panels">
+				<div class="panel-regras">
+					<h1>Regras</h1>
+            				<ul>
+                				<li>Ter entre 3 e 180 anos!</li>
+						<li>Tem que gostar de pão!</li>
+                				<li>Tem que ter assistido a capacitação!</li>
+            				</ul>
+				</div>
+				<div class="panel-fila">
+		           		<h1>Fila</h1>
+
+					<div id="divfila"></div>
+
+					<div class="add-fila">
+						<div class="add-fila-inputs">
+           						<input class="add-fila-input-nome" type="text" placeholder="Digite seu nome..." id="name" required></input>
+							<input class="add-fila-input-amount" type="number" placeholder="Quantidade" id="amount" required></input>
+						</div>
+						<div class="add-fila-button">
+							<button type="button" onclick="Add()">Quero Pão</button>
+						</div>
+					</div>
+				</div>		
+			</div>
+		</div>
+	</div>
+        
+    </body>
+</html>
+

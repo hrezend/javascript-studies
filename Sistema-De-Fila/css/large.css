@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Podkova&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;   
+}
+
+body{
+    font: 400 16px 'Podkova', sans-serif;
+    background-color: #E5CF94;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1{
+	color: #311B02;
+	font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+h2{
+	padding-top: 18px;
+	text-transform: uppercase;
+}
+
+h3{
+	padding-bottom: 8px;
+	font-weight: 400;
+}
+
+li{
+	font-weight: bolder;
+}
+.page-container{
+	width: 100%;
+	height: 100vh;
+}
+
+.page-nav{
+	background-color: #311B02;
+	width: 100%;
+	height: 30px;
+	margin-bottom: 70px;
+}
+
+.page-content{
+	width: 100%;
+	max-width: 975px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.page-logo-container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.page-panels{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 50px;
+}
+
+.panel-regras{
+	position: absolute;
+	left: 210px;
+	top: 315px;
+	width: 100%;
+	max-width: 220px;
+	padding: 24px;
+	background-color: #EDEDED;
+}
+
+.panel-fila{
+	position: relative;
+	bottom: 40px;
+	left: 280px;
+	width: 100%;
+	max-width: 650px;
+	padding: 24px;
+	background-color: #EDEDED;
+}
+
+.add-fila{
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+.add-fila-button{
+	width: 100px;
+	height: 100px;
+	margin-top: 27px;
+	margin-left: 10px;
+}
+.add-fila-inputs{
+	display: inline;
+	width: 100%;
+	height: 80%;
+}
+.add-fila input{
+	margin-top: 16px;
+	background: #D5D5D5;
+	border: none;
+	border-radius: 5px;
+	width: 100%;
+	padding-left: 8px; 
+}
+
+.add-fila-input-nome{
+	height: 57px;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.add-fila-input-amount{
+	height: 50px;
+	font-size: 16px;
+}
+
+.add-fila button{
+	height: 100px;
+	width: 100px;
+	color: #311B02;
+	background: #E5CF94;
+	font-size: 24px;
+	font-weight: bold;
+	border: 5px solid #311B02;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
