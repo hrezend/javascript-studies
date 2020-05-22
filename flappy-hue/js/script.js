@@ -72,7 +72,6 @@ function colisao(){
 	if(colide){
 			document.getElementById("peca").style = "background-color:red;";
 			document.getElementById("fundo").style = "background-image:url('assets/huebackg.jpg');";
-			document.getElementByName("bar").style = "opacity: 0.1;";
 			setTimeout(alertGO, 1000);		
 			clearInterval(t1);
 	}
