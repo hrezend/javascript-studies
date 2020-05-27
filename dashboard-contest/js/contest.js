@@ -89,5 +89,7 @@ function Chronometer(){
 		var Div = document.getElementById('chr');
 		Div.style.color = '#FF0000';
 	    Div.innerHTML = 'Game Over!';
+		time = 3600*hs;
+		Div.style.color = '#000000';
 	}
 }
