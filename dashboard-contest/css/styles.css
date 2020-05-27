@@ -80,6 +80,8 @@ body{
 
 .table-contest{
     min-height: 400px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 table {
