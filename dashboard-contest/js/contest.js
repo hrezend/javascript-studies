@@ -77,9 +77,17 @@ function Chronometer(){
 
         var hourOut = hor+':'+min+':'+seg;
         var Div = document.getElementById('chr');
+		if(time <= 1800){
+			Div.style.color = '#FF0000';
+		}
         Div.innerHTML = hourOut;
 
         setTimeout(Chronometer,1000);
         time--;
-    }
+    }	
+	else{
+		var Div = document.getElementById('chr');
+		Div.style.color = '#FF0000';
+	    Div.innerHTML = 'Game Over!';
+	}
 }
