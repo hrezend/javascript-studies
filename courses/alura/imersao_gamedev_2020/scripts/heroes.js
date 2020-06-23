@@ -5,16 +5,21 @@ class Hero extends Animacao{
         this.y = this.yBase;
         this.gravity = 3;
         this.speedJump = 0;
-        this.jumpHeight = 40;
+        this.jumpHeight = 30;
+        this.amount_jumps = 0;
     }
     jump(){
-        this.speedJump =- this.jumpHeight;
+        if(this.amount_jumps != 2){
+            this.speedJump =- this.jumpHeight;
+            this.amount_jumps++;
+        }
     }
     gravit(){
         this.y = this.y + this.speedJump;
         this.speedJump = this.speedJump + this.gravity;
         if(this.y > this.yBase){
             this.y = this.yBase;
+            this.amount_jumps = 0;
         }
     }
     colliding(enemy){
