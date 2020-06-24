@@ -47,6 +47,10 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
   - Talvez seja **necessário** possuir o **[Live Server](https://www.npmjs.com/package/live-server)** instalado na máquina. Você também pode instalar o mesmo, como uma extensão para o Visual Studio Code, o que torna o processo muito mais fácil e simplificado.
 
+- ### **Instruções**
+
+  - Pule para desviar de todos os monstros e acumular pontos, teclando ArrowUp. Se sua pontuação chegar a 0, o jogo acaba. Aperte F5 para reiniciar!
+
 1. Faça um clone do repositório:
 
 ```sh

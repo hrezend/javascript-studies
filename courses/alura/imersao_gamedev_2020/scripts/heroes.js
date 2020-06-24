@@ -1,11 +1,12 @@
 class Hero extends Animacao{
-    constructor(matriz, imagem, x, largura, altura, larguraSprite, alturaSprite){
-        super(matriz, imagem, x, largura, altura, larguraSprite, alturaSprite);
-        this.yBase = height - this.altura;
+    constructor(matriz, imagem, x, variacaoY, largura, altura, larguraSprite, alturaSprite){
+        super(matriz, imagem, x, variacaoY, largura, altura, larguraSprite, alturaSprite);
+        this.variacaoY = variacaoY;
+        this.yBase = height - this.altura - this.variacaoY;
         this.y = this.yBase;
         this.gravity = 3;
         this.speedJump = 0;
-        this.jumpHeight = 30;
+        this.jumpHeight = 33;
         this.amount_jumps = 0;
     }
     jump(){
@@ -23,16 +24,17 @@ class Hero extends Animacao{
         }
     }
     colliding(enemy){
-        const precision = 0.7;
-        const collid = collideRectRect(
-            this.x,
-            this.y,
-            this.largura * precision,
-            this.altura * precision,
-            enemy.x,
-            enemy.y,
-            enemy.largura * precision,
-            enemy.altura * precision)
+        //noFill();
+        //ellipse(this.largura/2, this.y*1.5, this.largura);
+        //ellipse(enemy.x/0.7, enemy.y*1.1, enemy.largura);
+        const collid = collideCircleCircle(
+            this.largura/2,
+            this.y*1.5,
+            this.largura,
+            enemy.x/0.7,
+            enemy.y*1.1,
+            enemy.largura,
+        );
         return collid;
     }
 }
