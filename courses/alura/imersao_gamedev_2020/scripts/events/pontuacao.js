@@ -10,10 +10,10 @@ class Punctuation{
     }
     incrementPoints(){
         if(this.points < 500){
-            this.points = this.points + 0.1;
-        }
-        else if(this.points < 1000){
             this.points = this.points + 0.2;
+        }
+        else if(this.points > 500){
+            this.points = this.points + 0.3;
         }
     }
     decrementPoints(amount){

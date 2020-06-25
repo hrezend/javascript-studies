@@ -1,3 +1,31 @@
+let imagemCenario;
+let imagemMenu;
+let imagemGameOver;
+let imagemHypsta;
+let imagemAzuring;
+let imagemFlyzuring;
+let imagemTroll;
+
+let cenario;
+let pontuacao;
+let hypsta;
+let azuring;
+let flyzuring;
+let troll;
+let soundGame;
+let soundJump;
+let randomEnemy;
+let enemie;
+
+let buttonGerenciador;
+let font;
+let jogo;
+let menu;
+let cenaAtual = 'menu';
+let cenas;
+
+const enemies = [];
+
 const matrizAzuring = [
     [0, 0],
     [105, 0],
