@@ -13,6 +13,6 @@ class ButtonGerenciador{
     }
     _changeScene(){
         this.button.remove();
-        cenaAtual = 'jogo';
+        cenaAtual = 'florest';
     }
 }

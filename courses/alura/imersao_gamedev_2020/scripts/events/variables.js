@@ -5,6 +5,7 @@ let imagemHypsta;
 let imagemAzuring;
 let imagemFlyzuring;
 let imagemTroll;
+let imagemLife;
 
 let cenario;
 let pontuacao;
@@ -14,12 +15,14 @@ let flyzuring;
 let troll;
 let soundGame;
 let soundJump;
-let randomEnemy;
-let enemie;
+let soundDamage;
+let soundGameOver;
 
+let fita;
 let buttonGerenciador;
 let font;
-let jogo;
+let florest;
+let life;
 let menu;
 let cenaAtual = 'menu';
 let cenas;

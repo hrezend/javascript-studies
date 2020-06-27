@@ -1,5 +1,7 @@
 function preload(){
+  fita = loadJSON('../scripts/map/fita.json');
   font = loadFont('../fonts/fontMenu.otf');
+  imagemLife = loadImage('../images/assets/heart.png');
   imagemMenu = loadImage('../images/cenario/start.png');
   imagemCenario = loadImage('../images/cenario/floresta.png');
   imagemGameOver = loadImage('../images/assets/gameOver.png');
@@ -9,24 +11,26 @@ function preload(){
   imagemTroll = loadImage('../images/inimigos/troll/sprite.png');
   soundGame = loadSound('../sounds/trilha_sonora_jogo.mp3');
   soundJump = loadSound('../sounds/effect_jump.mp3');
+  soundDamage = loadSound('../sounds/effect_damage.mp3');
+  soundGameOver = loadSound('../sounds/effect_game_over.mp3');
 }
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
   soundGame.loop();
   frameRate(30);
-  jogo = new Jogo();
+  florest = new Florest();
   menu = new Menu();
   buttonGerenciador = new ButtonGerenciador('New Game', width/2, height/2);
-  jogo.setup();
+  florest.setup();
   cenas = {
-    jogo: jogo,
+    florest: florest,
     menu: menu,
   };
 }
 
 function keyPressed(){
-  jogo.keyPressed(key);
+  florest.keyPressed(key);
 }
 
 function draw(){
