@@ -55,6 +55,6 @@ public class funcionario{
         return funcionarioDAO.delete(FID);
     }
     public static List <funcionario> getFuncionarios() throws SQLException{
-    	return funcionarioDAO.getMessages();
+    	return funcionarioDAO.getFuncionarios();
     }
 }

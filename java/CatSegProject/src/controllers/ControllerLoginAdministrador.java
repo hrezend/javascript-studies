@@ -23,16 +23,21 @@ public class ControllerLoginAdministrador extends HttpServlet{
 
         try {
     		adminLogin = adminLogin.login(login, password);
+		} catch (SQLException e){
+			e.printStackTrace();
+		}
+        if(adminLogin != null){
 			HttpSession session = request.getSession();
 			session.setAttribute("adminID", adminLogin.getAdminID());
 			session.setAttribute("adminName", adminLogin.getAdminName());
 			session.setAttribute("adminEmail", adminLogin.getAdminEmail());
 			System.out.println("Sessão com admnistrador: " + adminLogin.getAdminID() + " foi iniciada!");
 			response.sendRedirect("ControllerRedirectDashboard");
-		} catch (SQLException e) {
-			e.printStackTrace();
-			response.sendRedirect("ControllerRedirectSignIn");
 		}
+        else{
+			System.out.println("Não foi possível iniciar a sessão com essas credenciais!");
+			response.sendRedirect("ControllerRedirectSignIn");
+        }
 	}
 
 }

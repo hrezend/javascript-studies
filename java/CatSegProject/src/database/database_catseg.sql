@@ -26,8 +26,7 @@ create table if not exists indicadores(
 	cargaHorariaTotalDeTreinamento int not null,
 	cargo varchar(45) not null,
 	setor varchar(45) not null,
-	funcionarioID varchar(45) not null,
-	constraint FK_AdminID foreign key (funcionarioID) references funcionarios(funcionarioID)
+	funcionarioID varchar(45) not null
 );
 
  

@@ -1,4 +1,8 @@
-#page-dashboard .buttons-dashboard{
+#page-dashboard h2{
 	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+#page-dashboard .buttons-dashboard{
 	padding-bottom: 10px;
 }

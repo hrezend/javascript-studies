@@ -1,7 +1,6 @@
 package services;
 
 import java.io.IOException;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,12 +21,12 @@ public class ServletDeleteEmployee extends HttpServlet{
 			
 			if(f.delete(FID)){
 				System.out.println("Um funcionário foi apagado.");
-				RequestDispatcher view = request.getRequestDispatcher("ControllerRedirectDashboard");
-				view.forward(request, response);
+				response.setStatus(200);
+				response.sendRedirect("ControllerRedirectDashboard");
 			}else{
 				System.out.println("Erro ao apagar um funcionário.");
-				RequestDispatcher view = request.getRequestDispatcher("ControllerRedirectDashboard");
-				view.forward(request, response);
+				response.setStatus(400);
+				response.sendRedirect("ControllerRedirectDashboard");
 			}
 		}
 

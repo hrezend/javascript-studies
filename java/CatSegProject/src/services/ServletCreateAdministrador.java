@@ -2,7 +2,6 @@ package services;
 
 import java.util.UUID;
 import java.io.IOException;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,14 +28,12 @@ public class ServletCreateAdministrador extends HttpServlet{
 			
 			if(administrador.create()){
 				System.out.println("Um novo administrador foi cadastrado.");
-				request.setAttribute("message", "Administrador cadastrado!");
-				RequestDispatcher view = request.getRequestDispatcher("ControllerRedirectSignIn");
-				view.forward(request, response);
+				response.setStatus(201);
+				response.sendRedirect("ControllerRedirectSignIn");
 			}else{
 				System.out.println("Erro ao cadastradar um novo administrador.");
-				request.setAttribute("message", "Não foi possível cadastrar o administrador!");
-				RequestDispatcher view = request.getRequestDispatcher("ControllerRedirectSignUp");
-				view.forward(request, response);
+				response.setStatus(400);
+				response.sendRedirect("ControllerRedirectSignUp");
 			}
 		}
 

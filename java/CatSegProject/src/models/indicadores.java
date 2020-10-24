@@ -1,5 +1,7 @@
 package models;
 
+import java.sql.SQLException;
+
 import persistence.indicadoresDAO;
 
 public class indicadores{
@@ -12,7 +14,7 @@ public class indicadores{
     private int cargaHorariaTotalDeTreinamento;
     private String cargo;
     private String setor;
-    private String employeeID;
+    private static String employeeID;
     
 	public void setIndicadorID(int indicadorID) {
 		this.indicadorID = indicadorID;
@@ -39,7 +41,7 @@ public class indicadores{
 		this.setor = setor;
 	}
 	public void setEmployeeID(String employeeID) {
-		this.employeeID = employeeID;
+		indicadores.employeeID = employeeID;
 	}
 	public int getIndicadorID() {
 		return indicadorID;
@@ -73,5 +75,11 @@ public class indicadores{
 	//Métodos de DAO
 	public boolean create(){
 		return indicadoresDAO.create(this);
+	}
+	public boolean update(){
+		return indicadoresDAO.update(this);
+	}
+	public indicadores getAll(String param) throws SQLException{
+		return indicadoresDAO.getIndicadores(param);
 	}
 }

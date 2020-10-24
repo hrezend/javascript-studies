@@ -76,7 +76,7 @@ public class funcionarioDAO{
 	    }	
 	}
     
-    public static List <funcionario> getMessages() throws SQLException {
+    public static List <funcionario> getFuncionarios() throws SQLException {
 		funcionario f = null;
 		List <funcionario> funcionarios = new ArrayList<>();
 		ResultSet rs;
