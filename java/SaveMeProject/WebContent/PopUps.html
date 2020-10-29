@@ -1,0 +1,521 @@
+<!-- Pegar funçao de formatação dos campos -->
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/jquery.mask.js"></script>
+<script src="js/FormatCamposJQ.js" ></script>
+
+<script src="js/FormatarCampo.js" type="text/javascript"></script>
+<script src="js/ValidaEmail.js" type="text/javascript"></script>
+<script src="js/ValidaSenha.js" type="text/javascript"></script>
+<script src="https://kit.fontawesome.com/9b1e32f7a8.js"></script>
+
+<!-- Pop-Ups -->
+
+<!-- Alterar Email Usuário -->
+<div class="modal fade" id="editarEmail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Alterar Email</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="AcaoEditarEmailUsuario" method="post">
+           <div class="form-group">
+				<label for="inputPassword">Novo Email:</label>
+     			<input id="emailUsuario" name="emailUsuario" class="form-control" placeholder="email@email.com" required="required" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
+				<small id="passwordHelpBlock" class="form-text text-muted">Utilize um endereço de email válido.</small>
+			</div>
+			<div class="form-group">
+				<label for="inputPassword">Confirmar Email:</label>
+				<input type="email" class="form-control" onblur="ValidaEmail()" required="required" id="emailUsuario2" name="emailUsuario2">
+				<small id="passwordHelpBlock" class="form-text text-muted">Os emails devem coincidir!</small>
+			</div>
+          <div class="modal-footer">
+        	<button type="button" class="btn btn-light btn-custom" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cancelar</button>
+        	<button type="submit" class="btn btn-success btn-custom" onclick="ValidaEmail()"><i class="fas fa-check-circle"></i> Salvar</button>
+      	  </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<!-- Alterar Senha Usuário -->
+<div class="modal fade" id="editarSenha" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Alterar Senha</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="AcaoEditarSenhaUsuario" method="post">
+           <div class="form-group">
+				<label for="inputPassword">Nova Senha</label>
+				<input type="password" class="form-control" maxlength="20" required="required" id="senhaUsuario" name="senhaUsuario">
+				<small id="passwordHelpBlock" class="form-text text-muted">Sua senha deve ter entre 8 e 20 caracteres, podendo conter letras, números e caracteres especiais.</small>
+			</div>
+			<div class="form-group">
+				<label for="inputPassword">Confirmar Senha</label>
+				<input type="password" class="form-control" onblur="ValidaSenha()" maxlength="20" required="required" id="senhaUsuario2" name="senhaUsuario2">
+				<small id="passwordHelpBlock" class="form-text text-muted">As senhas devem coincidir!</small>
+			</div>
+          <div class="modal-footer">
+        	<button type="button" class="btn btn-light btn-custom" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cancelar</button>
+        	<button type="submit" class="btn btn-success btn-custom" onclick="ValidaSenha()"><i class="fas fa-check-circle"></i> Salvar</button>
+      	  </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Edição de Usuarios -->
+<div class="modal fade" id="editarUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Perfil</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="AcaoEditarUsuario" method="post">
+          <div class="form-group">
+            <label for="id" class="col-form-label">ID:</label>
+            <input type="text" class="form-control" id="id" name="idUsuario" readonly>
+          </div>
+          
+          <div class="form-row">
+          	<div class="form-group col-md-6">
+            	<label for="nome" class="col-form-label">Nome:</label>
+            	<input type="text" class="form-control" id="nome" name="nomeUsuario">
+         	</div>
+          	<div class="form-group col-md-6">
+           	 	<label for="telefone" class="col-form-label">Telefone:</label>
+				<input id="telefone" name="telefoneUsuario" class="form-control" placeholder="(XX) XXXXX-XXXX" required="required" type="text" maxlength="14">         	
+			</div>
+          </div>
+		   <div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="cidade">Cidade:</label>
+				<input type="text" class="form-control" id="cidade" name="cidadeUsuario">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="endereco">Endereço:</label>
+				<input type="text" class="form-control" id="endereco" name="enderecoUsuario">
+			</div>
+		   </div>
+		   <div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="estado">UF:</label>
+				<select id="estado" class="form-control" name="ufUsuario">
+				<option value="" selected>Selecionar</option>
+				<option>AC</option>
+				<option>AL</option>
+				<option>AM</option>
+				<option>AP</option>
+				<option>BA</option>
+				<option>CE</option>
+				<option>DF</option>
+				<option>ES</option>
+				<option>GO</option>
+				<option>MA</option>
+				<option>MG</option>
+				<option>MS</option>
+				<option>MT</option>
+				<option>PA</option>
+				<option>PB</option>
+				<option>PE</option>
+				<option>PI</option>
+				<option>PR</option>
+				<option>RJ</option>
+				<option>RN</option>
+				<option>RO</option>
+				<option>RR</option>
+				<option>RS</option>
+				<option>SC</option>
+				<option>SE</option>
+				<option>SP</option>
+				<option>TO</option>
+				</select>
+			</div>
+			<div class="form-group col-md-6">
+				<label for="cepUsuario">CEP:</label>
+				<input type="text" class="form-control" id="cep" maxlength="10" name="cepUsuario" placeholder="XX.XXX-XXX">
+			</div>
+		 </div>
+		 <div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="peso">Peso:</label>
+				<input type="text" class="form-control" placeholder="Apenas números" maxlength="7" name="pesoUsuario" id="peso">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="altura">Altura:</label>
+				<input type="text" class="form-control" placeholder="Apenas números" maxlength="4" name="alturaUsuario" id="altura">
+			</div>
+		  </div>
+		  <div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="diabete">Você possui diabetes?</label>
+				<select id="diabete" class="form-control" name="diabeticoUsuario">
+				<option value="" selected>Selecionar</option>
+				<option>Não.</option>
+				<option>Sim, possuo diabetes tipo 1.</option>
+				<option>Sim, possuo diabetes tipo 2.</option>
+				</select>
+			</div>
+			<div class="form-group col-md-6">
+				<label for="hipertensao">Você possui hipertensão?</label>
+				<select id="hipertensao" class="form-control" name="hipertensaoUsuario">
+				<option value="" selected>Selecionar</option>
+				<option>Não.</option>
+				<option>Sim.</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="venerea">Você possui alguma doença venérea?</label>
+				<select id="venerea" class="form-control" name="doencaVenereaUsuario">
+				<option value="" selected>Selecionar</option>
+				<option>Não.</option>
+				<option>Sim.</option>
+				</select>
+			</div>
+			<div class="form-group col-md-6">
+				<label for="colesterol">Você possui colesterol alto?</label>
+				<select id="colesterol" class="form-control" name="colesterolUsuario">
+				<option value="" selected>Selecionar</option>
+				<option>Não.</option>
+				<option>Sim.</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="estadocivil">Estado Civil:</label>
+				<select id="estadocivil" class="form-control" name="estCivilUsuario">
+				<option value="" selected>Selecionar</option>
+				<option>União Estável</option>
+				<option>Casado(a)</option>
+				<option>Solteiro(a)</option>
+				<option>Separado(a)</option>
+				<option>Divorciado(a)</option>
+				<option>Viúvo(a)</option>
+				</select>
+			</div>
+		</div>
+          
+          <div class="modal-footer">
+        	<button type="button" class="btn btn-light btn-custom" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cancelar</button>
+        	<button type="submit" class="btn btn-success btn-custom"><i class="fas fa-check-circle"></i> Salvar</button>
+      	  </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<!-- Edição de Alergias -->
+<div class="modal fade" id="editarAlergia" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Alergia</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="AcaoEditarAlergia" method="post">
+          <div class="form-group">
+            <label for="id" class="col-form-label">ID:</label>
+            <input type="text" class="form-control" id="id" name="idAlergia" readonly>
+          </div>
+          <div class="form-group">
+            <label for="descricao" class="col-form-label">Descrição:</label>
+            <input type="text" class="form-control" id="descricao" name="descricaoAlergia">
+          </div>
+          <div class="modal-footer">
+        	<button type="button" class="btn btn-light btn-custom" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cancelar</button>
+        	<button type="submit" class="btn btn-success btn-custom"><i class="fas fa-check-circle"></i> Salvar</button>
+      	  </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<!-- Edição de Remédios -->
+<div class="modal fade" id="editarRemedio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Remédio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="AcaoEditarRemedio" method="post">
+          <div class="form-group">
+            <label for="id" class="col-form-label">ID:</label>
+            <input type="text" class="form-control" id="id" name="idRemedio" readonly>
+          </div>
+          <div class="form-group">
+            <label for="nome" class="col-form-label">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nomeRemedio">
+          </div>
+          <div class="form-group">
+            <label for="descricao" class="col-form-label">Descrição de Uso:</label>
+            <input type="text" class="form-control" id="descricao" name="descricaoUso">
+          </div>
+            <div class="modal-footer">
+        		<button type="button" class="btn btn-light btn-custom" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cancelar</button>
+        		<button type="submit" class="btn btn-success btn-custom"><i class="fas fa-check-circle"></i> Salvar</button>
+      		</div>
+        </form>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+<!-- Edição de Hospital -->
+<div class="modal fade" id="editarHospital" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Hospital</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="AcaoEditarHospital" method="post">
+          <div class="form-group">
+            <label for="id" class="col-form-label">ID:</label>
+            <input type="text" class="form-control" id="id" name="idHospital" readonly>
+          </div>
+          <div class="form-group">
+            <label for="nome" class="col-form-label">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nomeHospital">
+          </div>
+          <div class="form-group">
+            <label for="localizacao" class="col-form-label">Localização:</label>
+            <input type="text" class="form-control" id="localizacao" name="localizacaoHospital">
+          </div>
+            <div class="modal-footer">
+        		<button type="button" class="btn btn-light btn-custom" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cancelar</button>
+       			<button type="submit" class="btn btn-success btn-custom"><i class="fas fa-check-circle"></i> Salvar</button>
+      		</div>
+        </form>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+<!-- Edição de Farmácia -->
+<div class="modal fade" id="editarFarmacia" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Farmácia</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="AcaoEditarFarmacia" method="post">
+          <div class="form-group">
+            <label for="id" class="col-form-label">ID:</label>
+            <input type="text" class="form-control" id="id" name="idFarmacia" readonly>
+          </div>
+          <div class="form-group">
+            <label for="nome" class="col-form-label">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nomeFarmacia">
+          </div>
+          <div class="form-group">
+            <label for="localizacao" class="col-form-label">Localização:</label>
+            <input type="text" class="form-control" id="localizacao" name="localizacaoFarmacia">
+          </div>
+            <div class="modal-footer">
+       			<button type="button" class="btn btn-light btn-custom" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cancelar</button>
+        		<button type="submit" class="btn btn-success btn-custom"><i class="fas fa-check-circlen"></i> Salvar</button>
+      		</div>
+        </form>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+<!-- Edição de Consulta Realizada -->
+<div class="modal fade" id="editarConsultaR" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Consulta Realizada</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="AcaoEditarConsultaRealizada" method="post">
+          <div class="form-group">
+            <label for="id" class="col-form-label">ID:</label>
+            <input type="text" class="form-control" id="id" name="idConsultaRealizada" readonly>
+          </div>
+          <div class="form-group">
+            <label for="nome" class="col-form-label">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="hospitalConsultaRealizada">
+          </div>
+          <div class="form-group">
+            <label for="data" class="col-form-label">Data:</label>
+            <input type="date" class="form-control" id="data" name="dataConsultaRealizada">
+          </div>
+          <div class="form-group">
+            <label for="especialidade" class="col-form-label">Especialidade:</label>
+            <input type="text" class="form-control" id="especialidade" name="especialidadeConsultaRealizada">
+          </div>
+           <div class="form-group">
+            <label for="diagnostico" class="col-form-label">Diagnostico:</label>
+            <input type="text" class="form-control" id="diagnostico" name="diagnosticoConsultaRealizada">
+          </div>
+           <div class="modal-footer">
+        		<button type="button" class="btn btn-light btn-custom" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cancelar</button>
+        		<button type="submit" class="btn btn-success btn-custom"><i class="fas fa-check-circle"></i> Salvar</button>
+        	</div>
+        </form>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+<!-- Edição de Consulta Futura -->
+<div class="modal fade" id="editarConsultaF" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Consulta Futura</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="AcaoEditarConsultaFutura" method="post">
+          <div class="form-group">
+            <label for="id" class="col-form-label">ID:</label>
+            <input type="text" class="form-control" id="id" name="idConsultaFutura" readonly>
+          </div>
+          <div class="form-group">
+            <label for="nome" class="col-form-label">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="hospitalConsultaFutura">
+          </div>
+          <div class="form-group">
+            <label for="data" class="col-form-label">Data:</label>
+            <input type="date" class="form-control" id="data" name="dataConsultaFutura">
+          </div>
+          <div class="form-group">
+            <label for="especialidade" class="col-form-label">Especialidade:</label>
+            <input type="text" class="form-control" id="especialidade" name="especialidadeConsultaFutura">
+          </div>
+           <div class="modal-footer">
+        		<button type="button" class="btn btn-light btn-custom" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cancelar</button>
+        		<button type="submit" class="btn btn-success btn-custom"><i class="fas fa-check-circle"></i> Salvar</button>
+     	   </div>
+        </form>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+<!-- Edição de Contato -->
+<div class="modal fade" id="editarContato" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Contato</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="AcaoEditarContato" method="post">
+          <div class="form-group">
+            <label for="id" class="col-form-label">ID:</label>
+            <input type="text" class="form-control" id="id" name="idContato" readonly>
+          </div>
+          <div class="form-group">
+            <label for="nome" class="col-form-label">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nomeContato">
+          </div>
+          <div class="form-group">
+            <label for="telefone" class="col-form-label">Telefone:</label>
+            <input type="text" class="form-control" id="telefone" name="telefoneContato">
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-form-label">Email:</label>
+            <input type="text" class="form-control" id="email" name="emailContato">
+          </div>
+            <div class="modal-footer">
+        		<button type="button" class="btn btn-light btn-custom" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cancelar</button>
+       			<button type="submit" class="btn btn-success btn-custom"><i class="fas fa-check-circle"></i> Salvar</button>
+     		</div>
+        </form>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+<!-- Excluir Perfil -->
+<div class="modal fade" id="excluirPerfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Excluir Perfil</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="AcaoExcluirUsuario" method="post">
+           	Deseja realmente excluir este perfil? Depois de confirmar todos os seus dados serão apagados do nosso sistema!
+          <div class="modal-footer">
+        	<button type="button" class="btn btn-light btn-custom" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cancelar</button>
+        	<button type="submit" class="btn btn-success btn-custom"><i class="fas fa-check-circle"></i> Confirmar</button>
+      	  </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<!-- Fim da Área de Edições -->

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.funcionario;
 import models.indicadores;
 
 @WebServlet("/ServletAddIndicator")
@@ -17,7 +18,7 @@ public class ServletAddIndicator extends HttpServlet{
             indicadores i = new indicadores();
             request.setCharacterEncoding("utf-8");
             i.setEmployeeID(request.getParameter("employeeID").trim());
-            i.setIdade(Integer.parseInt(request.getParameter("idade")));
+            i.setDataNascimento(request.getParameter("dataNascimento"));
             i.setQuantidadeDeAdvertencias(Integer.parseInt(request.getParameter("quantidadeDeAdvertencias")));
             i.setQuantidadeDeAcidentes(Integer.parseInt(request.getParameter("quantidadeDeAcidentes")));
             i.setCargaHorariaSemanalDeTrabalho(Integer.parseInt(request.getParameter("cargaHorariaSemanalDeTrabalho")));
@@ -30,7 +31,10 @@ public class ServletAddIndicator extends HttpServlet{
 				response.setStatus(201);
 				response.sendRedirect("ControllerRedirectDashboard");
 			}else{
-				System.out.println("Erro ao cadastradar os indicadores do funcionário.");
+				System.out.println("Erro ao cadastradar os indicadores do funcionário. Portanto, destruímos todas as informações cadastradas antes.");
+				funcionario f = new funcionario();
+				String FID = request.getParameter("employeeID").trim();
+				f.delete(FID);
 				response.setStatus(400);
 				response.sendRedirect("ControllerRedirectDashboard");
 			}

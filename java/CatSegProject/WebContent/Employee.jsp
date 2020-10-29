@@ -25,17 +25,14 @@
 				adminName = (String)session.getAttribute("adminName");
 			}
 			String id = (String)request.getAttribute("funcionarioID");	
-			String name = (String)request.getAttribute("funcionarioName");
+			String name = (String)request.getAttribute("name");
 			String setor = (String)request.getAttribute("setor");
 			String cargo = (String)request.getAttribute("cargo");
-			int idade = 0, cst = 0, ctt = 0, adv = 0, acd = 0;
-			if(setor != null && setor != ""){
-				idade = (int)request.getAttribute("idade");
-				cst = (int)request.getAttribute("cst");
-				ctt = (int)request.getAttribute("ctt");
-				adv = (int)request.getAttribute("adv");
-				acd = (int)request.getAttribute("acd");
-			}
+			String dataNascimento = (String)request.getAttribute("dataNascimento");
+			int cst = (int)request.getAttribute("cst");
+			int ctt = (int)request.getAttribute("ctt");
+			int adv = (int)request.getAttribute("adv");
+			int acd = (int)request.getAttribute("acd");
 		%>
         <div id="page-employee-profile">
             <div>
@@ -50,86 +47,67 @@
 					<a class="btn btn-danger" href="ControllerRedirectDashboard">
             			<img src="./assets/bootstrap-icons-1.0.0/arrow-left.svg" alt="Arrow Left" width="24" height="24" title="Voltar">	
             		</a>
-            		<c:if test="${not empty setor}">
-            			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#add-indicator" data-id="<%=id%>" disabled>
-            				<img src="./assets/bootstrap-icons-1.0.0/plus.svg" alt="Plus" width="24" height="24" title="Adicionar Indicadores">	
-            			</button>
-            		</c:if>
-            		<c:if test="${empty setor}">
-            			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#add-indicator" data-id="<%=id%>">
-            				<img src="./assets/bootstrap-icons-1.0.0/plus.svg" alt="Plus" width="24" height="24" title="Adicionar Indicadores">	
-            			</button>
-            		</c:if>
-					<c:if test="${not empty setor}">
-            		<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#update-indicator" data-id=<%=id%> data-idade=<%=idade%> data-cargo=<%=cargo%> data-setor=<%=setor%> data-ctt=<%=ctt%> data-cst=<%=cst%> data-adv=<%=adv%> data-acd=<%=acd%>>
+            		<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#update-indicator" data-id=<%=id%> data-nascimento=<%=dataNascimento%> data-cargo=<%=cargo%> data-setor=<%=setor%> data-ctt=<%=ctt%> data-cst=<%=cst%> data-adv=<%=adv%> data-acd=<%=acd%>>
             			<img src="./assets/bootstrap-icons-1.0.0/pencil-fill.svg" alt="Trash" width="24" height="24" title="Editar Indicadores">	
             		</button> 
-            		</c:if>		
             	</div>
             	
-            	<c:if test="${not empty idade}">
-            		<div class="media">
-  						<img src="./assets/bootstrap-icons-1.0.0/clock-fill.svg" class="mr-3" alt="..." width="20" height="20">
-  						<div class="media-body">
-    						<h5 class="mt-0">Idade</h5>
-							<c:out value="${idade}"></c:out> anos
-  						</div>
-					</div>
-				</c:if>
-				<c:if test="${not empty setor}">
-					<div class="media">
-  						<img src="./assets/bootstrap-icons-1.0.0/geo-fill.svg" class="mr-3" alt="..." width="20" height="20">
-  						<div class="media-body">
-    						<h5 class="mt-0">Setor</h5>
-							<c:out value="${setor}"></c:out>
-  						</div>
-					</div>
-				</c:if>
-				<c:if test="${not empty cargo}">
-					<div class="media">
-  						<img src="./assets/bootstrap-icons-1.0.0/person-check-fill.svg" class="mr-3" alt="..." width="20" height="20">
-  						<div class="media-body">
-    						<h5 class="mt-0">Cargo</h5>
-							<c:out value="${cargo}"></c:out>
-  						</div>
-					</div>
-				</c:if>
-				<c:if test="${not empty cst}">
-					<div class="media">
-  						<img src="./assets/bootstrap-icons-1.0.0/clock.svg" class="mr-3" alt="..." width="20" height="20">
-  						<div class="media-body">
-    						<h5 class="mt-0">Carga horária semanal de trabalho</h5>
-							<c:out value="${cst}"></c:out> horas
-  						</div>
-					</div>
-				</c:if>
-				<c:if test="${not empty cst}">
-					<div class="media">
-  						<img src="./assets/bootstrap-icons-1.0.0/clock-history.svg" class="mr-3" alt="..." width="20" height="20">
-  						<div class="media-body">
-    						<h5 class="mt-0">Carga horária total de treinamentos</h5>
-							<c:out value="${ctt}"></c:out> horas
-  						</div>
-					</div>
-				</c:if>
-				<c:if test="${not empty adv}">
-					<div class="media">
-  						<img src="./assets/bootstrap-icons-1.0.0/exclamation-diamond.svg" class="mr-3" alt="..." width="20" height="20">
-  						<div class="media-body">
-    						<h5 class="mt-0">Quantidade de advertências</h5>
-							<c:out value="${adv}"></c:out> advertências registradas
-  						</div>
-					</div>
-				</c:if>
-				<c:if test="${not empty acd}">
-					<div class="media">
-  						<img src="./assets/bootstrap-icons-1.0.0/exclamation-circle.svg" class="mr-3" alt="..." width="20" height="20">
-  						<div class="media-body">
-    						<h5 class="mt-0">Quantidade de acidentes</h5>
-							<c:out value="${acd}"></c:out> acidentes sofridos registrados
-  						</div>
-					</div>
-				</c:if>
+            	<div class="media">
+  					<img src="./assets/bootstrap-icons-1.0.0/cursor-fill.svg" class="mr-3" alt="..." width="20" height="20">
+  					<div class="media-body">
+    					<h5 class="mt-0">Name</h5>
+						<c:out value="${name}"></c:out>
+  					</div>
+				</div>
+            	<div class="media">
+  					<img src="./assets/bootstrap-icons-1.0.0/clock-fill.svg" class="mr-3" alt="..." width="20" height="20">
+  					<div class="media-body">
+    					<h5 class="mt-0">Data de nascimento</h5>
+						<c:out value="${dataNascimento}"></c:out>
+  					</div>
+				</div>
+				<div class="media">
+  					<img src="./assets/bootstrap-icons-1.0.0/geo-fill.svg" class="mr-3" alt="..." width="20" height="20">
+  					<div class="media-body">
+    					<h5 class="mt-0">Setor</h5>
+						<c:out value="${setor}"></c:out>
+  					</div>
+				</div>
+				<div class="media">
+  					<img src="./assets/bootstrap-icons-1.0.0/person-check-fill.svg" class="mr-3" alt="..." width="20" height="20">
+  					<div class="media-body">
+    					<h5 class="mt-0">Cargo</h5>
+						<c:out value="${cargo}"></c:out>
+  					</div>
+				</div>
+				<div class="media">
+  					<img src="./assets/bootstrap-icons-1.0.0/clock.svg" class="mr-3" alt="..." width="20" height="20">
+  					<div class="media-body">
+    					<h5 class="mt-0">Carga horária semanal de trabalho</h5>
+						<c:out value="${cst}"></c:out> horas
+  					</div>
+				</div>
+				<div class="media">
+  					<img src="./assets/bootstrap-icons-1.0.0/clock-history.svg" class="mr-3" alt="..." width="20" height="20">
+  					<div class="media-body">
+    					<h5 class="mt-0">Carga horária total de treinamentos</h5>
+						<c:out value="${ctt}"></c:out> horas
+  					</div>
+				</div>
+				<div class="media">
+  					<img src="./assets/bootstrap-icons-1.0.0/exclamation-diamond.svg" class="mr-3" alt="..." width="20" height="20">
+  					<div class="media-body">
+    					<h5 class="mt-0">Quantidade de advertências</h5>
+						<c:out value="${adv}"></c:out> advertências registradas
+  					</div>
+				</div>
+				<div class="media">
+  					<img src="./assets/bootstrap-icons-1.0.0/exclamation-circle.svg" class="mr-3" alt="..." width="20" height="20">
+  					<div class="media-body">
+    					<h5 class="mt-0">Quantidade de acidentes</h5>
+						<c:out value="${acd}"></c:out> acidentes sofridos registrados
+  					</div>
+				</div>
             </div>
         </div>
 
@@ -137,6 +115,7 @@
 		<jsp:include page="PopUps.html" />
         <!-- jQuery and Bootstrap Bundle (includes Popper) -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
      	<script src="./js/functions.js"></script>
   </body>

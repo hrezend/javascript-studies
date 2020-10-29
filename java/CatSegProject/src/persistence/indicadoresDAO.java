@@ -13,11 +13,11 @@ public class indicadoresDAO{
 	public static boolean create(indicadores ind){
         PreparedStatement stm;	
 		Connection con;
-		String sql = "insert into indicadores(idade, quantidadeDeAdvertencias, quantidadeDeAcidentes, cargaHorariaSemanalDeTrabalho, cargaHorariaTotalDeTreinamento, cargo, setor, funcionarioID) values (?,?,?,?,?,?,?,?)";
+		String sql = "insert into indicadores(dataNascimento, quantidadeDeAdvertencias, quantidadeDeAcidentes, cargaHorariaSemanalDeTrabalho, cargaHorariaTotalDeTreinamento, cargo, setor, funcionarioID) values (?,?,?,?,?,?,?,?)";
 		try{
             con = connection.getConnection();
             stm = con.prepareStatement(sql);
-			stm.setInt(1, ind.getIdade());
+			stm.setString(1, ind.getDataNascimento());
 			stm.setInt(2, ind.getQuantidadeDeAdvertencias());
 			stm.setInt(3, ind.getQuantidadeDeAcidentes());
 			stm.setInt(4, ind.getCargaHorariaSemanalDeTrabalho());
@@ -39,13 +39,13 @@ public class indicadoresDAO{
 	public static boolean update(indicadores ind){
         Connection con;
         PreparedStatement stm;
-		String sql = "update indicadores set cargo = ?, setor = ?, idade = ?, quantidadeDeAdvertencias = ?, quantidadeDeAcidentes = ?, cargaHorariaSemanalDeTrabalho = ?, cargaHorariaTotalDeTreinamento = ?  where funcionarioID = ?";
+		String sql = "update indicadores set cargo = ?, setor = ?, dataNascimento = ?, quantidadeDeAdvertencias = ?, quantidadeDeAcidentes = ?, cargaHorariaSemanalDeTrabalho = ?, cargaHorariaTotalDeTreinamento = ?  where funcionarioID = ?";
 	    try{
             con = connection.getConnection();
             stm = con.prepareStatement(sql);
 			stm.setString(1, ind.getCargo());
 			stm.setString(2, ind.getSetor());
-			stm.setInt(3, ind.getIdade());
+			stm.setString(3, ind.getDataNascimento());
 			stm.setInt(4, ind.getQuantidadeDeAdvertencias());
 			stm.setInt(5, ind.getQuantidadeDeAcidentes());
 			stm.setInt(6, ind.getCargaHorariaSemanalDeTrabalho());
@@ -81,7 +81,7 @@ public class indicadoresDAO{
 			ind.setSetor(rs.getString("setor"));
 			ind.setCargo(rs.getString("cargo"));
 			ind.setEmployeeID(rs.getString("funcionarioID"));
-			ind.setIdade(rs.getInt("idade"));
+			ind.setDataNascimento(rs.getString("dataNascimento"));
 			ind.setCargaHorariaSemanalDeTrabalho(rs.getInt("cargaHorariaSemanalDeTrabalho"));
 			ind.setCargaHorariaTotalDeTreinamento(rs.getInt("cargaHorariaTotalDeTreinamento"));
 			ind.setQuantidadeDeAcidentes(rs.getInt("quantidadeDeAcidentes"));

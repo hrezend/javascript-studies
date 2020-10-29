@@ -7,20 +7,20 @@ import persistence.indicadoresDAO;
 public class indicadores{
 	
 	private int indicadorID;
-    private int idade;
     private int quantidadeDeAdvertencias;
     private int quantidadeDeAcidentes;
     private int cargaHorariaSemanalDeTrabalho;
     private int cargaHorariaTotalDeTreinamento;
     private String cargo;
     private String setor;
+    private String dataNascimento;
     private static String employeeID;
     
 	public void setIndicadorID(int indicadorID) {
 		this.indicadorID = indicadorID;
 	}
-	public void setIdade(int idade) {
-		this.idade = idade;
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 	public void setQuantidadeDeAdvertencias(int quantidadeDeAdvertencias) {
 		this.quantidadeDeAdvertencias = quantidadeDeAdvertencias;
@@ -46,8 +46,8 @@ public class indicadores{
 	public int getIndicadorID() {
 		return indicadorID;
 	}
-	public int getIdade() {
-		return idade;
+	public String getDataNascimento() {
+		return dataNascimento;
 	}
 	public int getQuantidadeDeAdvertencias() {
 		return quantidadeDeAdvertencias;

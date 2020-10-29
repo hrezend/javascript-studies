@@ -29,9 +29,9 @@ public class ControllerRedirectEmployeeProfile extends HttpServlet {
     	
     	if(i != null){
         	request.setAttribute("funcionarioID", ID);
-        	request.setAttribute("funcionarioName", Name);
+        	request.setAttribute("name", Name);
         	request.setAttribute("id", i.getIndicadorID());
-    		request.setAttribute("idade", i.getIdade());
+    		request.setAttribute("dataNascimento", i.getDataNascimento());
     		request.setAttribute("setor", i.getSetor());
     		request.setAttribute("cargo", i.getCargo());
     		request.setAttribute("ctt", i.getCargaHorariaTotalDeTreinamento());

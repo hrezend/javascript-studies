@@ -19,7 +19,7 @@ create table if not exists funcionarios(
 
 create table if not exists indicadores(
 	indicadorID int not null primary key auto_increment,
-	idade int not null,
+	dataNascimento varchar(45) not null,
 	quantidadeDeAdvertencias int not null,
 	quantidadeDeAcidentes int not null,
 	cargaHorariaSemanalDeTrabalho int not null,

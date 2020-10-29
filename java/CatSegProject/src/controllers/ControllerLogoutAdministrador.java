@@ -19,7 +19,7 @@ public class ControllerLogoutAdministrador extends HttpServlet {
 		session.removeAttribute("AdminEmail");
 		session.removeAttribute("AdminName");;
 		session.invalidate();
-		response.sendRedirect("ControllerRedirectSignIn");
+		response.sendRedirect("ControllerRedirectIndex");
 	}
 
 }

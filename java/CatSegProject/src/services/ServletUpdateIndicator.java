@@ -19,7 +19,7 @@ public class ServletUpdateIndicator extends HttpServlet{
             i.setCargo(request.getParameter("cargo").trim());
             i.setSetor(request.getParameter("setor").trim());
             i.setEmployeeID(request.getParameter("employeeID").trim());
-            i.setIdade(Integer.parseInt(request.getParameter("idade")));
+            i.setDataNascimento(request.getParameter("dataNascimento"));
             i.setCargaHorariaSemanalDeTrabalho(Integer.parseInt(request.getParameter("cargaHorariaSemanalDeTrabalho")));
             i.setCargaHorariaTotalDeTreinamento(Integer.parseInt(request.getParameter("cargaHorariaTotalDeTreinamento")));
             i.setQuantidadeDeAcidentes(Integer.parseInt(request.getParameter("quantidadeDeAcidentes")));

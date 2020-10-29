@@ -2,6 +2,8 @@ package services;
 
 import java.util.UUID;
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,7 +31,9 @@ public class ServletAddEmployee extends HttpServlet{
 			if(f.create()){
 				System.out.println("Um novo funcionário foi cadastrado.");
 				response.setStatus(201);
-				response.sendRedirect("ControllerRedirectDashboard");
+				request.setAttribute("employeeID",generatedUUID);
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("/ControllerRedirectAddIndicator");
+				rd.forward(request, response);
 			}else{
 				System.out.println("Erro ao cadastradar um novo funcionário.");
 				response.setStatus(400);
