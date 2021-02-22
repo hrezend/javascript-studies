@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+
+:root{
+    --color-black: #0C0C0C;
+    --color-dark: #212529;
+    --color-gray-dark: #343A40;
+    --color-yellow: #FFC107;
+    --color-green: #34CB79;
+    --color-red: #FF2300;
+    --color-blue: #008EE2;
+    --color-purple: #6F42C1;
+    --color-white: #F0F0F0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--color-white);
+    color: var(--color-dark);
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+/* CSS DA PAGINATION */
+.custom-page-link-focus{
+    color: var(--color-white) !important;
+    background-color: var(--color-green) !important;
+    border-color: var(--color-green) !important;
+}
+
+.custom-page-link{
+    color: var(--color-green) !important;
+    background-color: var(--color-white) !important;
+    border-color: var(--color-white) !important;
+}

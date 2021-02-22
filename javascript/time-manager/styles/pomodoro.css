@@ -1,0 +1,22 @@
+.timer-content{
+    color: var(--color-white);
+    background-color: var(--color-green);
+    border: none;
+    border-radius: 4px;
+
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.center{
+    text-align: center;
+}
+
+#button-timer-pomodoro:hover{
+    opacity: 0.9;
+}
+
+.span-alerts{
+    padding-top: 2px;
+    color: var(--color-dark);
+}
