@@ -1,14 +1,14 @@
 /* declare a 7 column grid on the table */
-#calendar {
+#todo-list {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
-#calendar tr, #calendar tbody {
+#todo-list tr, #todo-list tbody {
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
 }
 
@@ -20,18 +20,18 @@ caption{
     padding: 10px 0;
 }
 
-#calendar td, #calendar th {
+#todo-list td, #todo-list th {
 	padding: 5px;
 	box-sizing:border-box;
 	border: 1px solid #ccc;
 }
 
-#calendar .weekdays {
+#todo-list .todo-header {
 	background: var(--color-green);  
 }
 
 
-#calendar .weekdays th {
+#todo-list .todo-header th {
 	text-align: center;
 	text-transform: uppercase;
 	line-height: 20px;
@@ -41,17 +41,13 @@ caption{
 	font-size: 13px;
 }
 
-#calendar td {
+#todo-list td {
 	min-height: 180px;
     display: flex;
     flex-direction: column;
 }
 
-#calendar .days li:hover {
-	background: #d3d3d3;
-}
-
-#calendar .event {
+#todo-list .event {
     flex: 0 0 auto;
 	font-size: 13px;
 	border-radius: 4px;
@@ -60,53 +56,34 @@ caption{
 	line-height: 14px;
 	background: #e4f2f2;
 	border: 1px solid #b5dbdc;
-	color: #009aaf;
 	text-decoration: none;
 }
 
-#calendar .event-desc {
-	color: #666;
+#todo-list .event-deadline{
+	flex: 0 0 auto;
+	font-size: 13px;
+	border-radius: 4px;
+	padding: 5px;
+	margin-bottom: 5px;
+	line-height: 14px;
+	background: #FFF3CD;
+	border: 1px solid #FFECB5;
+	color: #664D03;
+	text-decoration: none;
+}
+
+#todo-list .event-desc{
+	color: #666666;
 	margin: 3px 0 7px 0;
 	text-decoration: none;	
 }
 
-#calendar .event-time {
+#todo-list .event-date{
+	color: #009aaf;
 	margin: 3px 0 7px 0;
 }
 
-#calendar .event-link{
+#todo-list .event-link{
 	color: var(--color-green);
 	text-decoration: none;	
-}
-
-/* ============================
-				Mobile Responsiveness
-   ============================*/
-
-
-@media(max-width: 768px) {
-
-	#calendar .weekdays, #calendar {
-		display: none;
-	}
-
-	#calendar li {
-		height: auto !important;
-		border: 1px solid #ededed;
-		width: 100%;
-		padding: 10px;
-		margin-bottom: -1px;
-	}
-  
-    #calendar, #calendar tr, #calendar tbody {
-        grid-template-columns: 1fr;
-    }
-  
-    #calendar  tr {
-        grid-column: 1 / 2;
-    }
-
-	#calendar .date {
-		align-self: flex-start;
-	}
 }

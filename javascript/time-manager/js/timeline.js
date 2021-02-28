@@ -32,16 +32,17 @@ function setTimeline(){
         var event = document.createElement('div');
         var eventDesc = document.createElement('div');
         var eventTime = document.createElement('div');
-        var eventLink = document.createElement('div');
+        var eventLink = document.createElement('a');
 
         event.setAttribute('class', 'event');
         eventDesc.setAttribute('class', 'event-desc');
         eventTime.setAttribute('class', 'event-time');
         eventLink.setAttribute('class', 'event-link');
+        eventLink.setAttribute('href', dbTimeline[i].link);
 
         eventDesc.appendChild(document.createTextNode(dbTimeline[i].description));
         eventTime.appendChild(document.createTextNode(dbTimeline[i].time));
-        eventLink.appendChild(document.createTextNode(dbTimeline[i].link));
+        eventLink.appendChild(document.createTextNode('click to join class'));
 
         event.appendChild(eventDesc);
         event.appendChild(eventTime);
