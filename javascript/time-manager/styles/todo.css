@@ -47,19 +47,33 @@ caption{
     flex-direction: column;
 }
 
-#todo-list .event {
+#todo-list .event-at {
     flex: 0 0 auto;
 	font-size: 13px;
 	border-radius: 4px;
 	padding: 5px;
 	margin-bottom: 5px;
 	line-height: 14px;
-	background: #e4f2f2;
-	border: 1px solid #b5dbdc;
+	background: #D1E7DD;
+	border: 1px solid #BADBCC;
+	color: #0F5132;
 	text-decoration: none;
 }
 
-#todo-list .event-deadline{
+#todo-list .event-before-deadline{
+    flex: 0 0 auto;
+	font-size: 13px;
+	border-radius: 4px;
+	padding: 5px;
+	margin-bottom: 5px;
+	line-height: 14px;
+	background: #CFE2FF;
+	border: 1px solid #B6D4FE;
+	color: #084298;
+	text-decoration: none;
+}
+
+#todo-list .event-during-deadline{
 	flex: 0 0 auto;
 	font-size: 13px;
 	border-radius: 4px;
@@ -72,15 +86,27 @@ caption{
 	text-decoration: none;
 }
 
+#todo-list .event-after-deadline{
+	flex: 0 0 auto;
+	font-size: 13px;
+	border-radius: 4px;
+	padding: 5px;
+	margin-bottom: 5px;
+	line-height: 14px;
+	background: #F8D7DA;
+	border: 1px solid #F5C2C7;
+	color: #842029;
+	text-decoration: none;
+}
+
 #todo-list .event-desc{
-	color: #666666;
 	margin: 3px 0 7px 0;
 	text-decoration: none;	
 }
 
 #todo-list .event-date{
-	color: #009aaf;
 	margin: 3px 0 7px 0;
+	text-decoration: none;
 }
 
 #todo-list .event-link{

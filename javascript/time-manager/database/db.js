@@ -7,13 +7,13 @@ dbTimeline.push({
     day: 'Monday',
     time: '1:00pm to 2:50pm',
     description: 'Class of MATA95',
-    link: 'https://meet.google.com/pns-xnvf-dww',
+    link: 'https://meet.google.com/ccj-bfex-fqn',
 });
 dbTimeline.push({
     day: 'Monday',
     time: '3:45pm to 6:30pm',
     description: 'Class of MATA57',
-    link: '',
+    link: 'https://meet.google.com/owg-smxv-wvt',
 });
 dbTimeline.push({
     day: 'Monday',
@@ -25,7 +25,7 @@ dbTimeline.push({
     day: 'Wednesday',
     time: '1:00pm to 2:50pm',
     description: 'Class of MATA95',
-    link: 'https://meet.google.com/pns-xnvf-dww',
+    link: 'https://meet.google.com/ccj-bfex-fqn',
 });
 dbTimeline.push({
     day: 'Wednesday',
@@ -37,7 +37,7 @@ dbTimeline.push({
     day: 'Friday',
     time: '1:00pm to 2:50pm',
     description: 'Class of MATA95',
-    link: 'https://meet.google.com/pns-xnvf-dww',
+    link: 'https://meet.google.com/ccj-bfex-fqn',
 });
 //##############################################################
 //##############################################################
@@ -57,4 +57,16 @@ dbTodo.push({
 dbTodo.push({
     date: '04/06/2021',
     description: 'Test of MATA95 (SBS)',
+});
+dbTodo.push({
+    date: '15/03/2021',
+    description: 'Estudo de caso em dupla (tá no AVA) - ADM001',
+});
+dbTodo.push({
+    date: '15/03/2021',
+    description: 'Diferença C/C++ em grupo - LAB1',
+});
+dbTodo.push({
+    date: '15/03/2021',
+    description: 'Fórum sobre o livro Ética Prática - COMPSOC',
 });

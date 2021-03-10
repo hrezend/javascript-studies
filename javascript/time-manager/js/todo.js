@@ -15,8 +15,8 @@ function sortDatabase(a, b){
     let mesB = dateB[3] + dateB[4];
     let anoB = dateB[6] + dateB[7] + dateB[8] + dateB[9];
 
-    //return ( (anoA < anoB) || (anoA == anoB && mesA < mesB) || (anoA == anoB && mesA == mesB && diaA > diaB) );
-    return (anoA < anoB ? -1 : mesA < mesB ? -1 : diaA > diaB ? 0 : 1);
+    //console.log('Data 1: ' + diaA + '/' + mesA + '/' + anoA + ' Data 2: ' + diaB + '/' + mesB + '/' + anoB);
+    return ( (Number(anoA) > Number(anoB)) || (Number(anoA) == Number(anoB) && Number(mesA) > Number(mesB)) || (Number(anoA) == Number(anoB) && Number(mesA) == Number(mesB) && Number(diaA) > Number(diaB)) );
 }
 
 function verifyEventDeadline(eventDate){
@@ -30,16 +30,31 @@ function verifyEventDeadline(eventDate){
     let anoEvent = eventDate[6] + eventDate[7] + eventDate[8] + eventDate[9];
 
     let deadline = (Number(day) - Number(diaEvent));
+    console.log(deadline)
 
     if(Number(year) >= Number(anoEvent)){
         if(Number(month) >= Number(mesEvent)){
+            if(deadline == 0){
+                return 'at';
+            }
+        }
+    }
+    if(Number(year) >= Number(anoEvent)){
+        if(Number(month) >= Number(mesEvent)){
+            if(deadline > 0){
+                return 'after';
+            }
+        }
+    }
+    if(Number(year) >= Number(anoEvent)){
+        if(Number(month) >= Number(mesEvent)){
             if(deadline <= 7){
-                 return 0;
+                 return 'during';
             }
         }
     }
 
-    return 1;
+    return 'before';
 }
 
 function setTodoList(){
@@ -56,13 +71,23 @@ function setTodoList(){
         var eventDesc = document.createElement('div');
         var eventDate = document.createElement('div');
 
-        if(verifyEventDeadline(dbTodo[i].date)){
-            divEventDate.setAttribute('class', 'event');
-            divEventDescription.setAttribute('class', 'event');
+        console.log(verifyEventDeadline(dbTodo[i].date));
+
+        if(verifyEventDeadline(dbTodo[i].date) === 'before'){
+            divEventDate.setAttribute('class', 'event-before-deadline');
+            divEventDescription.setAttribute('class', 'event-before-deadline');
         }
-        else{
-            divEventDate.setAttribute('class', 'event-deadline');
-            divEventDescription.setAttribute('class', 'event-deadline');
+        if(verifyEventDeadline(dbTodo[i].date) === 'at'){
+            divEventDate.setAttribute('class', 'event-at');
+            divEventDescription.setAttribute('class', 'event-at');
+        }
+        if(verifyEventDeadline(dbTodo[i].date) === 'during'){
+            divEventDate.setAttribute('class', 'event-during-deadline');
+            divEventDescription.setAttribute('class', 'event-during-deadline');
+        }
+        if(verifyEventDeadline(dbTodo[i].date) === 'after'){
+            divEventDate.setAttribute('class', 'event-after-deadline');
+            divEventDescription.setAttribute('class', 'event-after-deadline');
         }
 
         eventDate.setAttribute('class', 'event-date');
