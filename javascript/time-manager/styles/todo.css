@@ -1,14 +1,13 @@
-/* declare a 7 column grid on the table */
 #todo-list {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 
 #todo-list tr, #todo-list tbody {
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     width: 100%;
 }
 
@@ -29,7 +28,6 @@ caption{
 #todo-list .todo-header {
 	background: var(--color-green);  
 }
-
 
 #todo-list .todo-header th {
 	text-align: center;
@@ -99,14 +97,15 @@ caption{
 	text-decoration: none;
 }
 
-#todo-list .event-desc{
-	margin: 3px 0 7px 0;
-	text-decoration: none;	
-}
-
-#todo-list .event-date{
+#todo-list .event-card{
+	min-height: 30px;
+	max-height: 30px;
 	margin: 3px 0 7px 0;
 	text-decoration: none;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;	
 }
 
 #todo-list .event-link{

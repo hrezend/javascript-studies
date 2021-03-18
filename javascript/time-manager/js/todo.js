@@ -63,44 +63,72 @@ function setTodoList(){
     for(var i = 0; i < dbTodo.length; i++){
 
         var divDate = document.getElementById('todo-date');
+        var divTitle = document.getElementById('todo-title');
         var divDescription = document.getElementById('todo-description');
+        var divState = document.getElementById('todo-state');
 
         var divEventDate = document.createElement('div');
+        var divEventTitle = document.createElement('div');
         var divEventDescription = document.createElement('div');
+        var divEventState = document.createElement('div');
 
-        var eventDesc = document.createElement('div');
         var eventDate = document.createElement('div');
+        var eventTitle = document.createElement('div');
+        var eventDesc = document.createElement('div');
+        var eventState = document.createElement('div');
 
-        console.log(verifyEventDeadline(dbTodo[i].date));
+        //console.log(verifyEventDeadline(dbTodo[i].date));
 
         if(verifyEventDeadline(dbTodo[i].date) === 'before'){
             divEventDate.setAttribute('class', 'event-before-deadline');
+            divEventTitle.setAttribute('class', 'event-before-deadline');
             divEventDescription.setAttribute('class', 'event-before-deadline');
+            divEventState.setAttribute('class', 'event-before-deadline');
         }
         if(verifyEventDeadline(dbTodo[i].date) === 'at'){
             divEventDate.setAttribute('class', 'event-at');
+            divEventTitle.setAttribute('class', 'event-at');
             divEventDescription.setAttribute('class', 'event-at');
+            divEventState.setAttribute('class', 'event-at');
         }
         if(verifyEventDeadline(dbTodo[i].date) === 'during'){
             divEventDate.setAttribute('class', 'event-during-deadline');
+            divEventTitle.setAttribute('class', 'event-during-deadline');
             divEventDescription.setAttribute('class', 'event-during-deadline');
+            divEventState.setAttribute('class', 'event-during-deadline');
         }
         if(verifyEventDeadline(dbTodo[i].date) === 'after'){
             divEventDate.setAttribute('class', 'event-after-deadline');
+            divEventTitle.setAttribute('class', 'event-after-deadline');
             divEventDescription.setAttribute('class', 'event-after-deadline');
+            divEventState.setAttribute('class', 'event-after-deadline');
         }
 
-        eventDate.setAttribute('class', 'event-date');
-        eventDesc.setAttribute('class', 'event-desc');
+        eventDate.setAttribute('class', 'event-card');
+        eventTitle.setAttribute('class', 'event-card');
+        eventDesc.setAttribute('class', 'event-card');
+        eventState.setAttribute('class', 'event-card');
 
         eventDate.appendChild(document.createTextNode(dbTodo[i].date));
+        eventTitle.appendChild(document.createTextNode(dbTodo[i].title));
         eventDesc.appendChild(document.createTextNode(dbTodo[i].description));
 
+        if(dbTodo[i].state == 0){
+            eventState.appendChild(document.createTextNode('To Do'));
+        }
+        else if(dbTodo[i].state == 1){
+            eventState.appendChild(document.createTextNode('Done'));
+        }
+
         divEventDate.appendChild(eventDate);
+        divEventTitle.appendChild(eventTitle);
         divEventDescription.appendChild(eventDesc);
+        divEventState.appendChild(eventState);
 
         divDate.appendChild(divEventDate);
+        divTitle.appendChild(divEventTitle);
         divDescription.appendChild(divEventDescription);
+        divState.appendChild(divEventState);
     }
 }
 
