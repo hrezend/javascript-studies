@@ -29,27 +29,15 @@ function verifyEventDeadline(eventDate){
     let mesEvent = eventDate[3] + eventDate[4];
     let anoEvent = eventDate[6] + eventDate[7] + eventDate[8] + eventDate[9];
 
-    let deadline = (Number(day) - Number(diaEvent));
-    console.log(deadline)
+    let deadline = Math.abs((Number(day) - Number(diaEvent)));
 
-    if(Number(year) >= Number(anoEvent)){
-        if(Number(month) >= Number(mesEvent)){
-            if(deadline == 0){
+    if( Number(year) >= Number(anoEvent) ){
+        if( Number(month) >= Number(mesEvent) ){
+            if( deadline == 0 ){
                 return 'at';
             }
-        }
-    }
-    if(Number(year) >= Number(anoEvent)){
-        if(Number(month) >= Number(mesEvent)){
-            if(deadline > 0){
-                return 'after';
-            }
-        }
-    }
-    if(Number(year) >= Number(anoEvent)){
-        if(Number(month) >= Number(mesEvent)){
-            if(deadline <= 7){
-                 return 'during';
+            else if( deadline <= 7){
+                return 'during';
             }
         }
     }
@@ -97,12 +85,6 @@ function setTodoList(){
             divEventDescription.setAttribute('class', 'event-during-deadline');
             divEventState.setAttribute('class', 'event-during-deadline');
         }
-        if(verifyEventDeadline(dbTodo[i].date) === 'after'){
-            divEventDate.setAttribute('class', 'event-after-deadline');
-            divEventTitle.setAttribute('class', 'event-after-deadline');
-            divEventDescription.setAttribute('class', 'event-after-deadline');
-            divEventState.setAttribute('class', 'event-after-deadline');
-        }
 
         eventDate.setAttribute('class', 'event-card');
         eventTitle.setAttribute('class', 'event-card');
@@ -118,6 +100,10 @@ function setTodoList(){
         }
         else if(dbTodo[i].state == 1){
             eventState.appendChild(document.createTextNode('Done'));
+            divEventDate.setAttribute('class', 'event-after-deadline');
+            divEventTitle.setAttribute('class', 'event-after-deadline');
+            divEventDescription.setAttribute('class', 'event-after-deadline');
+            divEventState.setAttribute('class', 'event-after-deadline');
         }
 
         divEventDate.appendChild(eventDate);

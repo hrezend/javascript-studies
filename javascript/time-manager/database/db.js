@@ -46,12 +46,108 @@ dbTodo.push({
     date: '05/04/2021',
     title: 'MATA95',
     description: 'Test of MATA95 (P1)',
-    state: 0,
+    state: 1,
 });
 dbTodo.push({
     date: '03/05/2021',
     title: 'MATA95',
     description: 'Test of MATA95 (P2)',
+    state: 0,
+});
+dbTodo.push({
+    date: '15/03/2021',
+    title: 'ADM001',
+    description: 'Estudo de caso em dupla (praia mar)',
+    state: 1,
+});
+dbTodo.push({
+    date: '15/03/2021',
+    title: 'LAB1',
+    description: 'Trabalho sobre Diferença C/C++',
+    state: 1,
+});
+dbTodo.push({
+    date: '15/03/2021',
+    title: 'COMPUSOC - Tópico 2',
+    description: 'Fórum sobre o livro Ética Prática',
+    state: 1,
+});
+dbTodo.push({
+    date: '20/03/2021',
+    title: 'COMPUSOC - Tópico 3',
+    description: 'Fórum sobre o filme "Dilema das Redes"',
+    state: 1,
+});
+dbTodo.push({
+    date: '27/03/2021',
+    title: 'COMPUSOC - Tópico 4',
+    description: 'PDF - Resenha do livro + Palestra de Marcello',
+    state: 1,
+});
+dbTodo.push({
+    date: '20/03/2021',
+    title: 'COMPUSOC - Tópico 3',
+    description: 'Questionário "Por uma outra globalização"',
+    state: 1,
+});
+dbTodo.push({
+    date: '05/04/2021',
+    title: 'ADM001',
+    description: 'Análise do filme Tempos Modernos ',
+    state: 1,
+});
+dbTodo.push({
+    date: '07/04/2021',
+    title: 'COMPUSOC - Tópico 6',
+    description: 'Ética e Regulamentação - Banco de Dados',
+    state: 1,
+});
+dbTodo.push({
+    date: '07/04/2021',
+    title: 'COMPUSOC - Tópico 6',
+    description: 'Ética e Regulamentação - Questionário',
+    state: 1,
+});
+dbTodo.push({
+    date: '05/04/2021',
+    title: 'ADM001',
+    description: 'Fórum: Os papéis do administrador no atual contexto pandêmico.',
+    state: 1,
+});
+dbTodo.push({
+    date: '07/04/2021',
+    title: 'COMPUSOC - Tópico 15',
+    description: 'ENVIAR URGENTE - Definir trio e tema para o trabalho',
+    state: 1,
+});
+dbTodo.push({
+    date: '30/04/2021',
+    title: 'COMPUSOC - Tópico 15',
+    description: 'ENVIAR - Definir descrição do "produto"',
+    state: 0,
+});
+dbTodo.push({
+    date: '02/06/2021',
+    title: 'COMPUSOC - Tópico 15',
+    description: 'ENVIAR - Produto e Relatórios das práticas em grupo',
+    state: 0,
+});
+dbTodo.push({
+    date: '15/04/2021',
+    title: 'COMPUSOC - Tópico 5',
+    description: 'Fórum "Discutindo sobre Software Livre e Controle Social"',
+    state: 1,
+});
+dbTodo.push({
+    date: '23/04/2021',
+    title: 'COMPUSOC - Tópico 7',
+    description: 'Atividade - "Dados Abertos, Inovação e Controle Social"',
+    state: 0,
+});
+dbTodo.push({
+    date: '01/05/2021',
+    title: 'COMPUSOC - Tópico 8',
+    description: 'Forum - Fake news e os caminhos para informação em rede',
     state: 0,
 });
 dbTodo.push({
@@ -64,47 +160,5 @@ dbTodo.push({
     date: '04/06/2021',
     title: 'MATA95',
     description: 'Test of MATA95 (SBS)',
-    state: 0,
-});
-dbTodo.push({
-    date: '15/03/2021',
-    title: 'ADM001',
-    description: 'Estudo de caso em dupla (tá no AVA) - ADM001',
-    state: 1,
-});
-dbTodo.push({
-    date: '15/03/2021',
-    title: 'LAB1',
-    description: 'Trabalho sobre Diferença C/C++',
-    state: 1,
-});
-dbTodo.push({
-    date: '15/03/2021',
-    title: 'COMPUSOC',
-    description: 'Fórum sobre o livro Ética Prática',
-    state: 1,
-});
-dbTodo.push({
-    date: '20/03/2021',
-    title: 'COMPUSOC',
-    description: 'Fórum sobre o filme "Dilema das Redes"',
-    state: 1,
-});
-dbTodo.push({
-    date: '20/03/2021',
-    title: 'COMPUSOC',
-    description: 'Questionário "Por uma outra globalização"',
-    state: 0,
-});
-dbTodo.push({
-    date: '27/03/2021',
-    title: 'COMPUSOC',
-    description: 'Resenha crítica do livro "Além das Redes de Colaboração"',
-    state: 0,
-});
-dbTodo.push({
-    date: '27/03/2021',
-    title: 'COMPUSOC',
-    description: 'Fórum sobre palestra 1',
     state: 0,
 });
