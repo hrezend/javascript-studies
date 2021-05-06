@@ -49,12 +49,6 @@ dbTodo.push({
     state: 1,
 });
 dbTodo.push({
-    date: '03/05/2021',
-    title: 'MATA95',
-    description: 'Test of MATA95 (P2)',
-    state: 0,
-});
-dbTodo.push({
     date: '15/03/2021',
     title: 'ADM001',
     description: 'Estudo de caso em dupla (praia mar)',
@@ -121,18 +115,6 @@ dbTodo.push({
     state: 1,
 });
 dbTodo.push({
-    date: '30/04/2021',
-    title: 'COMPUSOC - Tópico 15',
-    description: 'ENVIAR - Definir descrição do "produto"',
-    state: 0,
-});
-dbTodo.push({
-    date: '02/06/2021',
-    title: 'COMPUSOC - Tópico 15',
-    description: 'ENVIAR - Produto e Relatórios das práticas em grupo',
-    state: 0,
-});
-dbTodo.push({
     date: '15/04/2021',
     title: 'COMPUSOC - Tópico 5',
     description: 'Fórum "Discutindo sobre Software Livre e Controle Social"',
@@ -142,12 +124,36 @@ dbTodo.push({
     date: '23/04/2021',
     title: 'COMPUSOC - Tópico 7',
     description: 'Atividade - "Dados Abertos, Inovação e Controle Social"',
-    state: 0,
+    state: 1,
+});
+dbTodo.push({
+    date: '23/04/2021',
+    title: 'COMPUSOC - Tópico 7',
+    description: 'Questionário - "Dados Abertos, Inovação e Controle Social"',
+    state: 1,
 });
 dbTodo.push({
     date: '01/05/2021',
     title: 'COMPUSOC - Tópico 8',
     description: 'Forum - Fake news e os caminhos para informação em rede',
+    state: 1,
+});
+dbTodo.push({
+    date: '03/05/2021',
+    title: 'MATA95',
+    description: 'Test of MATA95 (P2)',
+    state: 0,
+});
+dbTodo.push({
+    date: '30/04/2021',
+    title: 'COMPUSOC - Tópico 15',
+    description: 'ENVIAR - Definir descrição do "produto"',
+    state: 1,
+});
+dbTodo.push({
+    date: '02/06/2021',
+    title: 'COMPUSOC - Tópico 15',
+    description: 'ENVIAR - Produto e Relatórios das práticas em grupo',
     state: 0,
 });
 dbTodo.push({
@@ -160,5 +166,29 @@ dbTodo.push({
     date: '04/06/2021',
     title: 'MATA95',
     description: 'Test of MATA95 (SBS)',
+    state: 0,
+});
+dbTodo.push({
+    date: '05/05/2021',
+    title: 'COMPUSOC - Tópico 10',
+    description: 'Palestra - Inteligência artificial, democracia e desafios regulatórios',
+    state: 0,
+});
+dbTodo.push({
+    date: '05/05/2021',
+    title: 'COMPUSOC - Tópico 11',
+    description: 'Palestra - Saude emocional nas redes',
+    state: 0,
+});
+dbTodo.push({
+    date: '05/05/2021',
+    title: 'COMPUSOC - Tópico 12',
+    description: 'Palestra - Segurança da Informação e Ética: Ensino, Respeito e Responsabilidade',
+    state: 0,
+});
+dbTodo.push({
+    date: '05/05/2021',
+    title: 'COMPUSOC - Tópico 13',
+    description: 'Palestra - Repositório Institucional: acesso aberto para a produção científica da UFBA',
     state: 0,
 });
