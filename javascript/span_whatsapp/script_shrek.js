@@ -1,31 +1,17 @@
-sendSpan(`SHREK
-
-Written by
-
-William Steig & Ted Elliott
-
-
-
+sendSpan(`
 
 SHREK
-Once upon a time there was a lovely 
-princess. But she had an enchantment 
-upon her of a fearful sort which could 
-only be broken by love's first kiss. 
-She was locked away in a castle guarded 
-by a terrible fire-breathing dragon. 
-Many brave knights had attempted to 
-free her from this dreadful prison, 
-but non prevailed. She waited in the 
-dragon's keep in the highest room of 
-the tallest tower for her true love 
-and true love's first kiss. (laughs) 
-Like that's ever gonna happen. What 
-a load of - (toilet flush)
+Written by William Steig & Ted Elliott
 
-Allstar - by Smashmouth begins to play. Shrek goes about his 
-day. While in a nearby town, the villagers get together to go 
-after the ogre.
+SHREK
+Once upon a time there was a lovely princess. But she had an enchantment upon her of a fearful sort which could only be broken by love's first kiss. 
+She was locked away in a castle guarded by a terrible fire-breathing dragon. 
+Many brave knights had attempted to free her from this dreadful prison, but non prevailed. 
+She waited in the dragon's keep in the highest room of the tallest tower for her true love and true love's first kiss. (laughs) 
+Like that's ever gonna happen. 
+What a load of - (toilet flush)
+
+Allstar - by Smashmouth begins to play. Shrek goes about his day. While in a nearby town, the villagers get together to go after the ogre.
 
 NIGHT - NEAR SHREK'S HOME
 
@@ -36,59 +22,40 @@ MAN2
 All right. Let's get it!
 
 MAN1
-Whoa. Hold on. Do you know what that 
-thing can do to you?
+Whoa. Hold on. Do you know what that thing can do to you?
 
 MAN3
-Yeah, it'll grind your bones for it's 
-bread.
+Yeah, it'll grind your bones for it's bread.
 
 Shrek sneaks up behind them and laughs.
 
 SHREK
-Yes, well, actually, that would be a 
-giant. Now, ogres, oh they're much worse. 
-They'll make a suit from your freshly 
-peeled skin.
+Yes, well, actually, that would be a giant. Now, ogres, oh they're much worse. They'll make a suit from your freshly peeled skin.
 
 MEN
 No!
 
 SHREK
-They'll shave your liver. Squeeze the 
-jelly from your eyes! Actually, it's 
-quite good on toast.
+They'll shave your liver. Squeeze the jelly from your eyes! Actually, it's quite good on toast.
 
 MAN1
-Back! Back, beast! Back! I warn ya! 
-(waves the torch at Shrek.)
+Back! Back, beast! Back! I warn ya! (waves the torch at Shrek.)
 
-Shrek calmly licks his fingers and extinguishes the torch. The 
-men shrink back away from him. Shrek roars very loudly and long 
-and his breath extinguishes all the remaining torches until the 
-men are in the dark.
+Shrek calmly licks his fingers and extinguishes the torch. The men shrink back away from him. Shrek roars very loudly and long and his breath extinguishes all the remaining torches until the men are in the dark.
 
 SHREK
-This is the part where you run away. 
-(The men scramble to get away. He laughs.) 
-And stay out! (looks down and picks 
-up a piece of paper. Reads.) "Wanted. 
-Fairy tale creatures."(He sighs and 
-throws the paper over his shoulder.)
+This is the part where you run away. (The men scramble to get away. He laughs.) 
+And stay out! (looks down and picks up a piece of paper. Reads.) 
+"Wanted. Fairy tale creatures."(He sighs and throws the paper over his shoulder.)
 
 
 THE NEXT DAY
 
-There is a line of fairy tale creatures. The head of the guard 
-sits at a table paying people for bringing the fairy tale creatures 
-to him. There are cages all around. Some of the people in line 
-are Peter Pan, who is carrying Tinkerbell in a cage, Gipetto 
-who's carrying Pinocchio, and a farmer who is carrying the three 
-little pigs.
+There is a line of fairy tale creatures. The head of the guard sits at a table paying people for bringing the fairy tale creatures to him. 
+There are cages all around. Some of the people in line are Peter Pan, who is carrying Tinkerbell in a cage, Gipetto who's carrying Pinocchio, and a farmer who is carrying the three little pigs.
 
 GUARD
-All right. This one's full. Take it 
-away! Move it along. Come on! Get up!
+All right. This one's full. Take it away! Move it along. Come on! Get up!
 
 
 HEAD GUARD
@@ -96,8 +63,7 @@ Next!
 
 GUARD
 (taking the witch's broom) Give me that! 
-Your flying days are over. (breaks the 
-broom in half)
+Your flying days are over. (breaks the broom in half)
 
 HEAD GUARD
 That's 20 pieces of silver for the witch. 
@@ -113,9 +79,7 @@ LITTLE BEAR
 (crying) This cage is too small.
 
 DONKEY
-Please, don't turn me in. I'll never 
-be stubborn again. I can change. Please! 
-Give me another chance!
+Please, don't turn me in. I'll never be stubborn again. I can change. Please! Give me another chance!
 
 OLD WOMAN
 Oh, shut up. (jerks his rope)
@@ -130,19 +94,15 @@ GIPETTO
 This little wooden puppet.
 
 PINOCCHIO
-I'm not a puppet. I'm a real boy. (his 
-nose grows)
+I'm not a puppet. I'm a real boy. (his nose grows)
 
 HEAD GUARD
-Five shillings for the possessed toy. 
-Take it away.
+Five shillings for the possessed toy. Take it away.
 
 PINOCCHIO
-Father, please! Don't let them do this! 
-Help me!
+Father, please! Don't let them do this! Help me!
 
-Gipetto takes the money and walks off. The old woman steps up 
-to the table.
+Gipetto takes the money and walks off. The old woman steps up to the table.
 
 HEAD GUARD
 Next! What have you got?
@@ -151,8 +111,7 @@ OLD WOMAN
 Well, I've got a talking donkey.
 
 HEAD GUARD
-Right. Well, that's good for ten shillings, 
-if you can prove it.
+Right. Well, that's good for ten shillings, if you can prove it.
 
 OLD WOMAN
 Oh, go ahead, little fella.
@@ -3467,8 +3426,7 @@ FIONA
 And why not?
 
 SHREK
-Because- - Because he's just marring 
-you so he can be king.
+Because- - Because he's just marring you so he can be king.
 
 FARQUAAD
 Outrageous! Fiona, don't listen to him.
@@ -3485,12 +3443,9 @@ SHREK
 Well, I - - Uh - - I mean - -
 
 FARQUAAD
-Oh, this is precious. The ogee has fallen 
-in love with the princess! Oh, good 
-Lord. (laughs)
+Oh, this is precious. The ogee has fallen in love with the princess! Oh, good Lord. (laughs)
 
-The prompter card guy holds up a card that says 'Laugh'. The 
-whole congregation laughs.
+The prompter card guy holds up a card that says 'Laugh'. The whole congregation laughs.
 
 FARQUAAD
 An ogre and a princess!
@@ -3499,31 +3454,24 @@ FIONA
 Shrek, is this true?
 
 FARQUAAD
-Who cares? It's preposterous! Fiona, 
-my love, we're but a kiss away from 
-our "happily ever after." Now kiss me! 
-(puckers his lips and leans toward her, 
-but she pulls back.)
+Who cares? It's preposterous! Fiona, my love, we're but a kiss away from our "happily ever after." Now kiss me! 
+(puckers his lips and leans toward her, but she pulls back.)
 
 FIONA
-(looking at the setting sun) "By night 
-one way, by day another." (to Shrek) 
+(looking at the setting sun) "By night one way, by day another." (to Shrek) 
 I wanted to show you before.
 
 She backs up and as the sun sets she changes into her ogre self. 
 She gives Shrek a sheepish smile.
 
 SHREK
-Well, uh, that explains a lot. (Fiona 
-smiles)
+Well, uh, that explains a lot. (Fiona smiles)
 
 FARQUAAD
 Ugh! It's disgusting! Guards! Guards! 
-I order you to get that out of my sight 
-now! Get them! Get them both!
+I order you to get that out of my sight now! Get them! Get them both!
 
-The guards run in and separate Fiona and Shrek. Shrek fights 
-them.
+The guards run in and separate Fiona and Shrek. Shrek fights them.
 
 SHREK
 No, no!
@@ -3532,9 +3480,7 @@ FIONA
 Shrek!
 
 FARQUAAD
-This hocus-pocus alters nothing. This 
-marriage is binding, and that makes 
-me king! See? See?
+This hocus-pocus alters nothing. This marriage is binding, and that makes me king! See? See?
 
 FIONA
 No, let go of me! Shrek!
@@ -3551,44 +3497,35 @@ Get out of my way! Fiona! Arrgh!
 
 FARQUAAD
 I'll make you regret the day we met. 
-I'll see you drawn and quartered! You'll 
-beg for death to save you!
+I'll see you drawn and quartered! You'll beg for death to save you!
 
 FIONA
 No, Shrek!
 
 FARQUAAD
-(hold a dagger to Fiona's throat) And 
-as for you, my wife...
+(hold a dagger to Fiona's throat) And as for you, my wife...
 
 SHREK
 Fiona!
 
 FARQUAAD
-I'll have you locked back in that tower 
-for the rest of your days! I'm king!
+I'll have you locked back in that tower for the rest of your days! I'm king!
 
 
 Shrek manages to get a hand free and he whistles.
 
 FARQUAAD
 I will have order! I will have perfection! 
-I will have - - (Donkey and the dragon 
-show up and the dragon leans down and 
-eats Farquaad) Aaaah! Aah!
+I will have - - (Donkey and the dragon show up and the dragon leans down and eats Farquaad) Aaaah! Aah!
 
 DONKEY
-All right. Nobody move. I got a dragon 
-here, and I'm not afraid to use it. 
-(The dragon roars.) I'm a donkey on 
-the edge!
+All right. Nobody move. I got a dragon here, and I'm not afraid to use it. 
+(The dragon roars.) I'm a donkey on the edge!
 
-The dragon belches and Farquaad's crown flies out of her mouth 
-and falls to the ground.
+The dragon belches and Farquaad's crown flies out of her mouth and falls to the ground.
 
 DONKEY
-Celebrity marriages. They never last, 
-do they?
+Celebrity marriages. They never last, do they?
 
 The congregation cheers.
 
@@ -3620,27 +3557,20 @@ Shrek and Fiona kiss. Thelonius takes one of the cards and writes
 CONGREGATION
 Aawww!
 
-Suddenly the magic of the spell pulls Fiona away. She's lifted 
-up into the air and she hovers there while the magic works around 
-her.
+Suddenly the magic of the spell pulls Fiona away. She's lifted up into the air and she hovers there while the magic works around her.
 
 WHISPERS
-"Until you find true love's first kiss 
-and then take love's true form. Take 
-love's true form. Take love's true form."
+"Until you find true love's first kiss and then take love's true form. Take love's true form. Take love's true form."
 
 
-Suddenly Fiona's eyes open wide. She's consumed by the spell 
-and then is slowly lowered to the ground.
+Suddenly Fiona's eyes open wide. She's consumed by the spell and then is slowly lowered to the ground.
 
 SHREK
 (going over to her) Fiona? Fiona. Are 
 you all right?
 
 FIONA
-(standing up, she's still an ogre) Well, 
-yes. But I don't understand. I'm supposed 
-to be beautiful.
+(standing up, she's still an ogre) Well, yes. But I don't understand. I'm supposed to be beautiful.
 
 SHREK
 But you ARE beautiful.
@@ -3648,31 +3578,26 @@ But you ARE beautiful.
 They smile at each other.
 
 DONKEY
-(chuckles) I was hoping this would be 
-a happy ending.
+(chuckles) I was hoping this would be a happy ending.
 
 Shrek and Fiona kiss...and the kiss fades into...
 
 THE SWAMP
 
-...their wedding kiss. Shrek and Fiona are now married. 'I'm 
-a Believer' by Smashmouth is played in the background. Shrek 
-and Fiona break apart and run through the crowd to their awaiting 
-carriage. Which is made of a giant onion. Fiona tosses her bouquet 
-which both Cinderella and Snow White try to catch. But they end 
-up getting into a cat fight and so the dragon catches the bouquet 
-instead. The Gingerbread man has been mended somewhat and now 
-has one leg and walks with a candy cane cane. Shrek and Fiona 
-walk off as the rest of the guests party and Donkey takes over 
-singing the song.
+...their wedding kiss. Shrek and Fiona are now married. 
+'I'm a Believer' by Smashmouth is played in the background. 
+Shrek and Fiona break apart and run through the crowd to their awaiting carriage. 
+Which is made of a giant onion. 
+Fiona tosses her bouquet which both Cinderella and Snow White try to catch. 
+But they end up getting into a cat fight and so the dragon catches the bouquet instead. 
+The Gingerbread man has been mended somewhat and now has one leg and walks with a candy cane cane. 
+Shrek and Fiona walk off as the rest of the guests party and Donkey takes over singing the song.
 
 GINGERBREAD MAN
 God bless us, every one.
 
 DONKEY
-(as he's done singing and we fade to 
-black) Oh, that's funny. Oh. Oh. I can't 
-breathe. I can't breathe.
+(as he's done singing and we fade to black) Oh, that's funny. Oh. Oh. I can't breathe. I can't breathe.
 
 THE END
 
