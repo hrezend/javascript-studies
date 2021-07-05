@@ -1,0 +1,176 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html{
+  height: 100vh;
+
+  --color-background: #FCFCFC;
+  --color-panel: #EBEBEB;
+  --color-text: #333333;
+  --color-headings: #0077FF;
+  --color-info: #80f040;
+
+  --dcolor-background: #333333;
+  --dcolor-panel: #434343;
+  --dcolor-text: #B5B5B5;
+  --dcolor-headings: #3664FF;
+  --dcolor-info:rgb(69, 136, 31)0;
+}
+
+body{
+  background-color: var(--color-background);
+}
+
+header{
+  background-color: var(--color-panel);
+  width: 100vw;
+  height: 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+header h2 {
+  color: var(--color-headings);
+  font-size: 28px;
+  font-weight: bold;
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.info{
+  width: 100vw;
+  position: fixed;
+  bottom: 10px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.screenContainer{
+  display: flex;
+  justify-content: center;
+}
+
+#screen{
+    border: 10px solid var(--color-panel);
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    width: 1000px;
+    height: 500px;
+}
+
+@media only screen and (max-width: 600px){
+  #screen{
+    width: 100vw;
+    height: 100vw;
+  }
+}
+
+/* INICIO TABELA DO SCORE DO GAME*/
+#score{
+  margin: 10px 0 0 20px;
+  font-size: 13px;
+  vertical-align: top;
+  display: flex;
+  justify-content: center;
+  color: var(--color-text);
+}
+
+#score tr.header td{
+  border-bottom: 1px solid var(--color-panel);
+  padding-bottom: 8px;
+}
+
+#score tr.footer td{
+  border-top: 1px solid var(--color-panel);
+  font-size: 11px;
+}
+
+#score td{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#score .socket-id{
+  font-weight: normal;
+  color: var(--color-text);
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+#score .score-value{
+  font-weight: bold;
+  color: var(--color-text);
+  text-align: right;
+}
+
+#score .current-player .socket-id{
+  color: var(--color-info);
+}
+
+#score .current-player .score-value{
+  color: var(--color-info);
+}
+/* FIM TABELA DO SCORE DO GAME*/
+
+/* INICIO CHECKBOX DARK/LIGHT MODE*/
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background: var(--color-text);
+    float: right;
+    border-radius: 100px;
+    position: relative;
+}
+
+label::after{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-panel);
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked + label {
+    background-color: var(--color-text);
+}
+
+input:checked + label::after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 45px;
+}
+/* FIM CHECKBOX DARK/LIGHT MODE*/

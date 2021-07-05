@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Battle</title>
+        <link rel="shortcut icon" href="/public/images/daggers.png"/>
+        <link rel="stylesheet" href="styles.css" type="text/css"/>
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <header>
+            <h2>Battle</h2>
+            <div class="toggle">
+                <input id="switch" type="checkbox" name="theme">
+                <label for="switch">Toggle</label>
+            </div>
+        </header>
+        <main>
+            <canvas id="screen" width="30" height="15"></canvas>
+            <table id="score">
+                <tr class="header">
+                    <td>Top 10 Jogadores</td>
+                    <td>Pontos</td>
+                </tr>
+                <tr class="${ socket.id === score.socketId ? 'current-player' : ''}">
+                    <td class="socket-id">dasda233</td>
+                    <td class="score-value">5</td>
+                </tr>
+                <tr class="current-player bottom">
+                    <td class="socket-id">sad1234d</td>
+                    <td class="score-value">10</td>
+                </tr>
+                <tr class="footer">
+                    <td>Total de jogadores</td>
+                    <td align="right">5</td>
+                </tr>
+            </table>
+        </main>
+
+        <script type="module">
+            import createGame from './game.js'
+            import createKeyboardListener from './keyboard-listener.js'
+            import renderScreen from './render-screen.js'
+            
+            const game = createGame();
+            const keyboardListener = createKeyboardListener(document);
+            
+
+            const socket = io();
+
+            socket.on('connect', () => {
+                const playerId = socket.id;
+                console.log(`Player connected on Client with id: ${playerId}`);
+
+                const screen = document.getElementById('screen');
+                renderScreen(screen, game, requestAnimationFrame, playerId);
+            });
+
+            socket.on('setup', (state) => {
+                const playerId = socket.id;
+                game.setState(state);
+
+                keyboardListener.registerPlayerId(playerId);
+                keyboardListener.subscribe(game.movePlayer);
+                keyboardListener.subscribe((command) => {
+                    socket.emit('move-player', command)
+                });
+            });
+
+            socket.on('add-player', (command) => {
+                console.log(`Receiving ${command.type} -> ${command.playerId}`);
+                game.addPlayer(command);
+            })
+
+            socket.on('remove-player', (command) => {
+                console.log(`Receiving ${command.type} -> ${command.playerId}`);
+                game.removePlayer(command);
+            })
+
+            socket.on('move-player', (command) => {
+                console.log(`Receiving ${command.type} -> ${command.playerId}`);
+
+                const playerId = socket.id;
+
+                if (playerId !== command.playerId) {
+                    game.movePlayer(command);
+                }
+            })
+
+            socket.on('add-fruit', (command) => {
+                console.log(`Receiving ${command.type} -> ${command.fruitId}`);
+                game.addFruit(command);
+            })
+
+            socket.on('remove-fruit', (command) => {
+                console.log(`Receiving ${command.type} -> ${command.fruitId}`);
+                game.removeFruit(command);
+            })
+        </script>
+        <script src="./dark-theme.js"></script>
+    </body>
+</html>
