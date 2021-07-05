@@ -17,44 +17,35 @@
             </div>
         </header>
         <main>
-            <canvas id="screen" width="30" height="15"></canvas>
+            <canvas id="screen"></canvas>
             <table id="score">
-                <tr class="header">
-                    <td>Top 10 Jogadores</td>
-                    <td>Pontos</td>
-                </tr>
-                <tr class="${ socket.id === score.socketId ? 'current-player' : ''}">
-                    <td class="socket-id">dasda233</td>
-                    <td class="score-value">5</td>
-                </tr>
-                <tr class="current-player bottom">
-                    <td class="socket-id">sad1234d</td>
-                    <td class="score-value">10</td>
-                </tr>
-                <tr class="footer">
-                    <td>Total de jogadores</td>
-                    <td align="right">5</td>
-                </tr>
             </table>
         </main>
 
         <script type="module">
-            import createGame from './game.js'
-            import createKeyboardListener from './keyboard-listener.js'
-            import renderScreen from './render-screen.js'
+            import createGame from './game.js';
+            import createKeyboardListener from './keyboard-listener.js';
+            import renderScreen, {setupScreen} from './render-screen.js';
+            import {getNickname} from './load-preferences.js';
             
             const game = createGame();
             const keyboardListener = createKeyboardListener(document);
-            
+            const playerName = getNickname();
 
-            const socket = io();
+            const socket = io({
+                query:{
+                    playerName,
+                }
+            });
 
             socket.on('connect', () => {
                 const playerId = socket.id;
                 console.log(`Player connected on Client with id: ${playerId}`);
 
                 const screen = document.getElementById('screen');
-                renderScreen(screen, game, requestAnimationFrame, playerId);
+                const scoreTable = document.getElementById('score');
+                setupScreen(screen, game);
+                renderScreen(screen, scoreTable, game, requestAnimationFrame, playerId);
             });
 
             socket.on('setup', (state) => {

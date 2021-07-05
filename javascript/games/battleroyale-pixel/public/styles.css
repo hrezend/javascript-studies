@@ -22,7 +22,7 @@ html{
   --dcolor-panel: #434343;
   --dcolor-text: #B5B5B5;
   --dcolor-headings: #3664FF;
-  --dcolor-info:rgb(69, 136, 31)0;
+  --dcolor-info:#45881f;
 }
 
 body{
@@ -83,7 +83,8 @@ main{
 
 /* INICIO TABELA DO SCORE DO GAME*/
 #score{
-  margin: 10px 0 0 20px;
+  width: 170px;
+  padding-left: 40px;
   font-size: 13px;
   vertical-align: top;
   display: flex;
@@ -123,11 +124,11 @@ main{
 }
 
 #score .current-player .socket-id{
-  color: var(--color-info);
+  color: var(--color-headings);
 }
 
 #score .current-player .score-value{
-  color: var(--color-info);
+  color: var(--color-headings);
 }
 /* FIM TABELA DO SCORE DO GAME*/
 

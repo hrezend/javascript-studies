@@ -4,7 +4,8 @@ export default function createGame(){
         fruits: {},
         screen: {
             width: 30,
-            height: 15
+            height: 15,
+            pixelsPerFields: 50,
         }
     }
 
@@ -32,6 +33,7 @@ export default function createGame(){
 
     function addPlayer(command) {
         const playerId = command.playerId;
+        const playerName = command.playerName;
         const playerX = 'playerX' in command ? command.playerX : Math.floor(Math.random() * state.screen.width);
         const playerY = 'playerY' in command ? command.playerY : Math.floor(Math.random() * state.screen.height);
 
@@ -39,13 +41,16 @@ export default function createGame(){
             x: playerX,
             y: playerY,
             score: 0,
+            playerName: playerName,
         }
 
         notifyAll({
             type: 'add-player',
             playerId: playerId,
+            playerName: playerName,
+            score: 0,
             playerX: playerX,
-            playerY: playerY
+            playerY: playerY,
         });
     }
 
