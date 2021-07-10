@@ -1,3 +1,5 @@
+import { mod } from "./utils.js";
+
 export default function createGame(){
     const state = {
         players: {},
@@ -5,7 +7,7 @@ export default function createGame(){
         screen: {
             width: 30,
             height: 15,
-            pixelsPerFields: 50,
+            pixelsPerFields: 5,
         }
     }
 
@@ -31,6 +33,18 @@ export default function createGame(){
         Object.assign(state, newState);
     }
 
+    //retorna array com os Id's dos players
+    function getIdPlayers(){
+        let { players } = state;
+        let playersId = [];
+        
+        for(const playerId in players){
+            playersId.push(playerId);        
+        }
+
+        return playersId;      
+    }
+
     function addPlayer(command) {
         const playerId = command.playerId;
         const playerName = command.playerName;
@@ -51,6 +65,12 @@ export default function createGame(){
             score: 0,
             playerX: playerX,
             playerY: playerY,
+        });
+
+        notifyAll({
+            type: 'play-audio',
+            audio: 'newPlayer',
+            playersId: getIdPlayers()
         });
     }
 
@@ -81,10 +101,16 @@ export default function createGame(){
             fruitX: fruitX,
             fruitY: fruitY
         });
+
+        notifyAll({
+            type: 'play-audio',
+            audio: 'newFruit',
+            playersId: getIdPlayers()
+        });
     }
 
     function removeFruit(command){
-        const fruitId = command.fruitId;
+        const {fruitId} = command;
 
         delete state.fruits[fruitId];
 
@@ -100,22 +126,22 @@ export default function createGame(){
         const acceptedMoves = {
             ArrowUp(player){
                 if (player.y - 1 >= 0){
-                    player.y = player.y - 1;
+                    player.y = mod(state.screen.height, player.y - 1);
                 }
             },
             ArrowRight(player){
                 if (player.x + 1 < state.screen.width){
-                    player.x = player.x + 1;
+                    player.x = mod(state.screen.width, player.x + 1);
                 }
             },
             ArrowDown(player){
                 if (player.y + 1 < state.screen.height){
-                    player.y = player.y + 1;
+                    player.y = mod(state.screen.height, player.y + 1);
                 }
             },
             ArrowLeft(player){
                 if (player.x - 1 >= 0){
-                    player.x = player.x - 1;
+                    player.x = mod(state.screen.width, player.x - 1);
                 }
             }
         }
@@ -141,8 +167,14 @@ export default function createGame(){
 
             if(player.x === fruit.x && player.y === fruit.y){
                 player.score = player.score + 1;
-                removeFruit({ fruitId: fruitId });
+                removeFruit({ fruitId, playerId });
                 console.log(`--> Collision detected between ${playerId} and ${fruitId} // ${playerId} - score: ${player.score}`);
+            
+                notifyAll({
+                    type: 'play-audio',
+                    audio: 'collect',
+                    playersId: [playerId]
+                });
             }
         }
     }

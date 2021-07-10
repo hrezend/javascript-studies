@@ -6,8 +6,8 @@ export function setupScreen(canvas, game) {
 
 export default function renderScreen(screen, scoreTable, game, requestAnimationFrame, currentPlayerId){
     const context = screen.getContext('2d');
-    context.fillStyle = 'white';
     const { screen: { width, height, pixelsPerFields }} = game.state;
+    context.fillStyle = 'white';
     context.clearRect(0, 0, width*pixelsPerFields, height*pixelsPerFields);
 
     for (const playerId in game.state.players){
@@ -40,18 +40,19 @@ function drawPlayer(screenContext, player, game, isCurrentPlayer = false){
     x *= pixelsPerFields;
     y *= pixelsPerFields;
 
-    const shield = './images/shield.png';
-    const daggers = './images/daggers.png';
-    const plus =  './images/heal.png';
-
-    const tank = new Image();
-    tank.src = shield;
+    let colorFill = 'pink';
 
     if(isCurrentPlayer){
-        tank.src = daggers;
+        colorFill = 'red';
     }
 
-    screenContext.drawImage(tank, x, y, pixelsPerFields, pixelsPerFields);
+    screenContext.fillStyle = colorFill;
+    screenContext.fillRect(x, y, pixelsPerFields, pixelsPerFields);
+
+    screenContext.fillStyle = 'black';
+    screenContext.fillRect(x+1,y+1,1,1);
+    screenContext.fillRect(x+3,y+1,1,1);
+    screenContext.fillRect(x+1,y+3,3,1);
 }
 
 function drawFruit(screenContext, fruit, game) {
@@ -62,11 +63,18 @@ function drawFruit(screenContext, fruit, game) {
     x *= pixelsPerFields;
     y *= pixelsPerFields;
     
-    // Draw burguer   
-    const hamburguer = './images/hamburguer.png';
-    const burguer = new Image();
-    burguer.src = hamburguer;
-    screenContext.drawImage(burguer, x, y, pixelsPerFields, pixelsPerFields);
+    // Draw strawberry body
+    screenContext.fillStyle = '#ff0000';
+    screenContext.fillRect(x, y+1, 1, 2);
+    screenContext.fillRect(x+4, y+1, 1, 2);
+    screenContext.fillRect(x+1, y+1, 1, 3);
+    screenContext.fillRect(x+3, y+1, 1, 3);
+    screenContext.fillRect(x+2, y+2, 1, 3);
+ 
+    // Draw green leaf
+    screenContext.fillStyle = '#00a933';
+    screenContext.fillRect(x+1,y,3,1);
+    screenContext.fillRect(x+2,y+1,1,1);
 }
 
 function updateScoreTable(scoreTable, game, currentPlayerId){
